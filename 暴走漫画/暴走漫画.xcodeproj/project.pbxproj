@@ -416,7 +416,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = "暴走漫画/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alasijiadegou.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -427,7 +429,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = "暴走漫画/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alasijiadegou.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -499,6 +503,7 @@
 				254918501D6F701600601E06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		254918511D6F701600601E06 /* Build configuration list for PBXNativeTarget "暴走漫画Tests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +512,7 @@
 				254918531D6F701600601E06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		254918541D6F701600601E06 /* Build configuration list for PBXNativeTarget "暴走漫画UITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +521,7 @@
 				254918561D6F701600601E06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
