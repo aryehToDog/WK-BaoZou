@@ -18,6 +18,7 @@
 		251012EF1D70A0B500BBBEB5 /* WKFriendTrendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 251012ED1D70A0B500BBBEB5 /* WKFriendTrendsViewController.xib */; };
 		251012F21D70A0CD00BBBEB5 /* WKMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 251012F11D70A0CD00BBBEB5 /* WKMeViewController.m */; };
 		251012F51D70A87800BBBEB5 /* WKNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 251012F41D70A87800BBBEB5 /* WKNavViewController.m */; };
+		251012F81D70A97500BBBEB5 /* WKTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 251012F71D70A97500BBBEB5 /* WKTabBar.m */; };
 		254918311D6F701600601E06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 254918301D6F701600601E06 /* Assets.xcassets */; };
 		254918341D6F701600601E06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 254918321D6F701600601E06 /* LaunchScreen.storyboard */; };
 		2549183F1D6F701600601E06 /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2549183E1D6F701600601E06 /* ____Tests.m */; };
@@ -62,6 +63,8 @@
 		251012F11D70A0CD00BBBEB5 /* WKMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKMeViewController.m; sourceTree = "<group>"; };
 		251012F31D70A87800BBBEB5 /* WKNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKNavViewController.h; sourceTree = "<group>"; };
 		251012F41D70A87800BBBEB5 /* WKNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKNavViewController.m; sourceTree = "<group>"; };
+		251012F61D70A97500BBBEB5 /* WKTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKTabBar.h; sourceTree = "<group>"; };
+		251012F71D70A97500BBBEB5 /* WKTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKTabBar.m; sourceTree = "<group>"; };
 		254918211D6F701600601E06 /* 暴走漫画.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "暴走漫画.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		254918301D6F701600601E06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		254918331D6F701600601E06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -290,6 +293,8 @@
 		251012D81D709E3000BBBEB5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				251012F61D70A97500BBBEB5 /* WKTabBar.h */,
+				251012F71D70A97500BBBEB5 /* WKTabBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -488,6 +493,7 @@
 				251012F21D70A0CD00BBBEB5 /* WKMeViewController.m in Sources */,
 				251012F51D70A87800BBBEB5 /* WKNavViewController.m in Sources */,
 				251012D91D709E3000BBBEB5 /* AppDelegate.m in Sources */,
+				251012F81D70A97500BBBEB5 /* WKTabBar.m in Sources */,
 				251012DD1D709EC100BBBEB5 /* WKTabBarController.m in Sources */,
 				251012E41D709FD000BBBEB5 /* UIView+Frame.m in Sources */,
 				251012E11D709FBB00BBBEB5 /* Foundation+Log.m in Sources */,

@@ -12,7 +12,7 @@
 #import "WKFriendTrendsViewController.h"
 #import "WKMeViewController.h"
 #import "WKNavViewController.h"
-
+#import "WKTabBar.h"
 
 @interface WKTabBarController ()
 
@@ -45,7 +45,8 @@
     //添加子控制器
     [self setUpVc];
     
-    
+    //替换系统TabBar
+    [self setValue:[[WKTabBar alloc]init] forKeyPath:@"tabBar"];
 }
 
 - (void)setUpVc {
