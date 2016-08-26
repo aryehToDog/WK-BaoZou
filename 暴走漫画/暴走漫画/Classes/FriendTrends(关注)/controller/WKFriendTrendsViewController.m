@@ -7,7 +7,7 @@
 //
 
 #import "WKFriendTrendsViewController.h"
-
+#import "WKFriendViewController.h"
 @interface WKFriendTrendsViewController ()
 
 @end
@@ -37,6 +37,9 @@
 - (void)clickBtn {
 
     WKLog(@"%s",__func__);
+    
+    WKFriendViewController *friendVc = [[WKFriendViewController alloc]init];
+    [self.navigationController pushViewController:friendVc animated:YES];
 }
 
 /*

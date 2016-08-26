@@ -39,7 +39,9 @@
         //设置返回箭头及文字
         UIButton *backBtn = [[UIButton alloc]init];
         [backBtn addTarget:self action:@selector(backBtn) forControlEvents:UIControlEventTouchUpInside];
-        [backBtn sizeToFit];
+        backBtn.size = CGSizeMake(70, 30);
+//        [backBtn sizeToFit];
+        backBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         //设置距离左边的距离
         backBtn.contentEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0);
         [backBtn setTitle:@"返回" forState:UIControlStateNormal];
@@ -48,6 +50,9 @@
         [backBtn setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateNormal];
         [backBtn setImage:[UIImage imageNamed:@"navigationButtonReturnClick"] forState:UIControlStateHighlighted];
         
+        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:backBtn];
+        
+        viewController.hidesBottomBarWhenPushed = YES;
     }
 
     [super pushViewController:viewController animated:animated];
