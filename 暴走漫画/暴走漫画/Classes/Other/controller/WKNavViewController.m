@@ -40,6 +40,8 @@
         UIButton *backBtn = [[UIButton alloc]init];
         [backBtn addTarget:self action:@selector(backBtn) forControlEvents:UIControlEventTouchUpInside];
         [backBtn sizeToFit];
+        //设置距离左边的距离
+        backBtn.contentEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0);
         [backBtn setTitle:@"返回" forState:UIControlStateNormal];
         [backBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [backBtn setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];

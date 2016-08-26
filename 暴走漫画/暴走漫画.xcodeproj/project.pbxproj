@@ -24,6 +24,8 @@
 		2549183F1D6F701600601E06 /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2549183E1D6F701600601E06 /* ____Tests.m */; };
 		2549184A1D6F701600601E06 /* ____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 254918491D6F701600601E06 /* ____UITests.m */; };
 		25BF21EE1D70B2D7003271C0 /* WKBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF21ED1D70B2D7003271C0 /* WKBarButtonItem.m */; };
+		25BF21F21D70BBE9003271C0 /* WKFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF21F01D70BBE9003271C0 /* WKFriendViewController.m */; };
+		25BF21F31D70BBE9003271C0 /* WKFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25BF21F11D70BBE9003271C0 /* WKFriendViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,9 @@
 		2549184B1D6F701600601E06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25BF21EC1D70B2D7003271C0 /* WKBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKBarButtonItem.h; sourceTree = "<group>"; };
 		25BF21ED1D70B2D7003271C0 /* WKBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKBarButtonItem.m; sourceTree = "<group>"; };
+		25BF21EF1D70BBE9003271C0 /* WKFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKFriendViewController.h; sourceTree = "<group>"; };
+		25BF21F01D70BBE9003271C0 /* WKFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKFriendViewController.m; sourceTree = "<group>"; };
+		25BF21F11D70BBE9003271C0 /* WKFriendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WKFriendViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +171,9 @@
 				251012EB1D70A0B500BBBEB5 /* WKFriendTrendsViewController.h */,
 				251012EC1D70A0B500BBBEB5 /* WKFriendTrendsViewController.m */,
 				251012ED1D70A0B500BBBEB5 /* WKFriendTrendsViewController.xib */,
+				25BF21EF1D70BBE9003271C0 /* WKFriendViewController.h */,
+				25BF21F01D70BBE9003271C0 /* WKFriendViewController.m */,
+				25BF21F11D70BBE9003271C0 /* WKFriendViewController.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -465,6 +473,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25BF21F31D70BBE9003271C0 /* WKFriendViewController.xib in Resources */,
 				254918341D6F701600601E06 /* LaunchScreen.storyboard in Resources */,
 				254918311D6F701600601E06 /* Assets.xcassets in Resources */,
 				251012EF1D70A0B500BBBEB5 /* WKFriendTrendsViewController.xib in Resources */,
@@ -498,6 +507,7 @@
 				251012EE1D70A0B500BBBEB5 /* WKFriendTrendsViewController.m in Sources */,
 				251012F21D70A0CD00BBBEB5 /* WKMeViewController.m in Sources */,
 				251012F51D70A87800BBBEB5 /* WKNavViewController.m in Sources */,
+				25BF21F21D70BBE9003271C0 /* WKFriendViewController.m in Sources */,
 				251012D91D709E3000BBBEB5 /* AppDelegate.m in Sources */,
 				251012F81D70A97500BBBEB5 /* WKTabBar.m in Sources */,
 				251012DD1D709EC100BBBEB5 /* WKTabBarController.m in Sources */,
