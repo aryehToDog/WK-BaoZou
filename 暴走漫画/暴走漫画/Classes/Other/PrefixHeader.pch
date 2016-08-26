@@ -1,0 +1,24 @@
+//
+//  PrefixHeader.pch
+//  暴走漫画
+//
+//  Created by 阿拉斯加的狗 on 16/8/27.
+//  Copyright © 2016年 阿拉斯加的🐶. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "UIView+Frame.h"
+
+#ifdef DEBUG // 调试阶段
+#define WKLog(...) NSLog(__VA_ARGS__)
+#else // 发布阶段
+#define WKLog(...)
+#endif
+
+
+#define WKColor(r,g,b) [UIColor colorWithRed:(r/255.0) green:(g/255.0) blue:(b/255.0) alpha:1.0]
+#define WKGrobeColor WKColor(223,223,223)
+
+#endif /* PrefixHeader_pch */
