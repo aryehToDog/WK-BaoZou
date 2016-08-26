@@ -17,12 +17,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-        self.view.backgroundColor = WKGrobeColor;
+    self.view.backgroundColor = WKGrobeColor;
+    
+    //设置导航条内容
+    [self setUpItem];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setUpItem {
+    
+    //设置导航条View
+    self.navigationItem.title = @"我的关注";
+    
+    //设置item
+    self.navigationItem.leftBarButtonItem = [WKBarButtonItem itemWithImage:@"friendsRecommentIcon" hightImage:@"friendsRecommentIcon-click" action:@selector(clickBtn) target:self];
+    
+}
+
+- (void)clickBtn {
+
+    WKLog(@"%s",__func__);
 }
 
 /*

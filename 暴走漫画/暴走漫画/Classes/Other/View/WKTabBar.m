@@ -28,6 +28,8 @@
         [self addSubview:redBtn];
         self.redBtn = redBtn;
         
+        //设置tab的背景颜色
+        [self setBackgroundImage:[UIImage imageNamed:@"tabbar-light"]];
     }
 
     return self;

@@ -17,14 +17,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-        self.view.backgroundColor = WKGrobeColor;
+    self.view.backgroundColor = WKGrobeColor;
+    
+    //设置导航条内容
+    [self setUpItem];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setUpItem {
+    
+    //设置导航条View
+    self.navigationItem.title = @"我的";
+    
+    //设置item
+    WKBarButtonItem *settingItem = [WKBarButtonItem itemWithImage:@"mine-setting-icon" hightImage:@"mine-setting-icon-click" action:@selector(clickSetting) target:self];
+    
+    WKBarButtonItem *moonItem = [WKBarButtonItem itemWithImage:@"mine-moon-icon" hightImage:@"mine-moon-icon-click" action:@selector(clickMoonItem) target:self];
+    self.navigationItem.rightBarButtonItems = @[settingItem,moonItem];
+    
+}
+- (void)clickSetting {
+    
+    WKLog(@"%s",__func__);
 }
 
+- (void)clickMoonItem {
+    
+    WKLog(@"%s",__func__);
+}
 /*
 #pragma mark - Navigation
 

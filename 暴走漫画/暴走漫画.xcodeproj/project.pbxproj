@@ -23,6 +23,7 @@
 		254918341D6F701600601E06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 254918321D6F701600601E06 /* LaunchScreen.storyboard */; };
 		2549183F1D6F701600601E06 /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2549183E1D6F701600601E06 /* ____Tests.m */; };
 		2549184A1D6F701600601E06 /* ____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 254918491D6F701600601E06 /* ____UITests.m */; };
+		25BF21EE1D70B2D7003271C0 /* WKBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF21ED1D70B2D7003271C0 /* WKBarButtonItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		254918451D6F701600601E06 /* 暴走漫画UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "暴走漫画UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		254918491D6F701600601E06 /* ____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____UITests.m"; sourceTree = "<group>"; };
 		2549184B1D6F701600601E06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25BF21EC1D70B2D7003271C0 /* WKBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKBarButtonItem.h; sourceTree = "<group>"; };
+		25BF21ED1D70B2D7003271C0 /* WKBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKBarButtonItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +271,8 @@
 				251012E21D709FD000BBBEB5 /* UIView+Frame.h */,
 				251012E31D709FD000BBBEB5 /* UIView+Frame.m */,
 				251012E01D709FBB00BBBEB5 /* Foundation+Log.m */,
+				25BF21EC1D70B2D7003271C0 /* WKBarButtonItem.h */,
+				25BF21ED1D70B2D7003271C0 /* WKBarButtonItem.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -489,6 +494,7 @@
 			files = (
 				251012DA1D709E3000BBBEB5 /* main.m in Sources */,
 				251012EA1D70A09F00BBBEB5 /* WKNewViewController.m in Sources */,
+				25BF21EE1D70B2D7003271C0 /* WKBarButtonItem.m in Sources */,
 				251012EE1D70A0B500BBBEB5 /* WKFriendTrendsViewController.m in Sources */,
 				251012F21D70A0CD00BBBEB5 /* WKMeViewController.m in Sources */,
 				251012F51D70A87800BBBEB5 /* WKNavViewController.m in Sources */,

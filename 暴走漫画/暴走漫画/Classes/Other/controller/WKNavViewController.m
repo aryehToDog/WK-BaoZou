@@ -14,6 +14,14 @@
 
 @implementation WKNavViewController
 
++ (void)initialize {
+
+    UINavigationBar *bar = [UINavigationBar appearance];
+    //设备nav背景颜色
+    [bar setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -24,14 +32,29 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if (self.childViewControllers.count > 0) {
+        
+        //设置返回箭头及文字
+        UIButton *backBtn = [[UIButton alloc]init];
+        [backBtn addTarget:self action:@selector(backBtn) forControlEvents:UIControlEventTouchUpInside];
+        [backBtn sizeToFit];
+        [backBtn setTitle:@"返回" forState:UIControlStateNormal];
+        [backBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [backBtn setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
+        [backBtn setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateNormal];
+        [backBtn setImage:[UIImage imageNamed:@"navigationButtonReturnClick"] forState:UIControlStateHighlighted];
+        
+    }
+
+    [super pushViewController:viewController animated:animated];
+    
 }
-*/
+
+- (void)backBtn {
+
+    [self popViewControllerAnimated:YES];
+}
 
 @end

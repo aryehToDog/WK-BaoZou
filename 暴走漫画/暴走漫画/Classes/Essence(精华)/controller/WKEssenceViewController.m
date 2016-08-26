@@ -19,6 +19,25 @@
     
     self.view.backgroundColor = WKGrobeColor;
     
+    //设置导航条内容
+    [self setUpItem];
+    
+}
+
+- (void)setUpItem {
+
+    //设置导航条View
+    self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"MainTitle"]];
+    
+    //设置item
+    self.navigationItem.leftBarButtonItem = [WKBarButtonItem itemWithImage:@"MainTagSubIcon" hightImage:@"MainTagSubIconClick" action:@selector(clickBtn) target:self];
+
+}
+
+- (void)clickBtn {
+
+    WKLog(@"%s",__func__);
+
 }
 
 - (void)didReceiveMemoryWarning {

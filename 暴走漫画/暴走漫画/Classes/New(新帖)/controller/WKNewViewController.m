@@ -17,12 +17,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-        self.view.backgroundColor = WKGrobeColor;
+    self.view.backgroundColor = WKGrobeColor;
+    
+    //设置导航条内容
+    [self setUpItem];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setUpItem {
+    
+    //设置导航条View
+    self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"MainTitle"]];
+    
+    self.navigationItem.leftBarButtonItem = [WKBarButtonItem itemWithImage:@"MainTagSubIcon" hightImage:@"MainTagSubIconClick" action:@selector(clickBtn) target:self];
+}
+
+- (void)clickBtn {
+
+    WKLog(@"%s",__func__);
 }
 
 /*
