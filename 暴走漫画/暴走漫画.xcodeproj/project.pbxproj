@@ -29,6 +29,10 @@
 		258537ED1D71BDAE006AD5FE /* WKFriendUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 258537EC1D71BDAE006AD5FE /* WKFriendUser.m */; };
 		258537F11D71BE22006AD5FE /* WKFriendUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 258537EF1D71BE22006AD5FE /* WKFriendUserCell.m */; };
 		258537F21D71BE22006AD5FE /* WKFriendUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 258537F01D71BE22006AD5FE /* WKFriendUserCell.xib */; };
+		258537F51D7202EE006AD5FE /* WKEssenceTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 258537F41D7202EE006AD5FE /* WKEssenceTagViewController.m */; };
+		258537F81D720377006AD5FE /* WKEssenceTage.m in Sources */ = {isa = PBXBuildFile; fileRef = 258537F71D720377006AD5FE /* WKEssenceTage.m */; };
+		258537FC1D720589006AD5FE /* WKEssenceTageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 258537FA1D720589006AD5FE /* WKEssenceTageCell.m */; };
+		258537FD1D720589006AD5FE /* WKEssenceTageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 258537FB1D720589006AD5FE /* WKEssenceTageCell.xib */; };
 		25BF21EE1D70B2D7003271C0 /* WKBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF21ED1D70B2D7003271C0 /* WKBarButtonItem.m */; };
 		25BF21F21D70BBE9003271C0 /* WKFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF21F01D70BBE9003271C0 /* WKFriendViewController.m */; };
 		25BF21F31D70BBE9003271C0 /* WKFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25BF21F11D70BBE9003271C0 /* WKFriendViewController.xib */; };
@@ -95,6 +99,13 @@
 		258537EE1D71BE22006AD5FE /* WKFriendUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKFriendUserCell.h; sourceTree = "<group>"; };
 		258537EF1D71BE22006AD5FE /* WKFriendUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKFriendUserCell.m; sourceTree = "<group>"; };
 		258537F01D71BE22006AD5FE /* WKFriendUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WKFriendUserCell.xib; sourceTree = "<group>"; };
+		258537F31D7202EE006AD5FE /* WKEssenceTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKEssenceTagViewController.h; sourceTree = "<group>"; };
+		258537F41D7202EE006AD5FE /* WKEssenceTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKEssenceTagViewController.m; sourceTree = "<group>"; };
+		258537F61D720377006AD5FE /* WKEssenceTage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKEssenceTage.h; sourceTree = "<group>"; };
+		258537F71D720377006AD5FE /* WKEssenceTage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKEssenceTage.m; sourceTree = "<group>"; };
+		258537F91D720589006AD5FE /* WKEssenceTageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKEssenceTageCell.h; sourceTree = "<group>"; };
+		258537FA1D720589006AD5FE /* WKEssenceTageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKEssenceTageCell.m; sourceTree = "<group>"; };
+		258537FB1D720589006AD5FE /* WKEssenceTageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WKEssenceTageCell.xib; sourceTree = "<group>"; };
 		25BF21EC1D70B2D7003271C0 /* WKBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKBarButtonItem.h; sourceTree = "<group>"; };
 		25BF21ED1D70B2D7003271C0 /* WKBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKBarButtonItem.m; sourceTree = "<group>"; };
 		25BF21EF1D70BBE9003271C0 /* WKFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKFriendViewController.h; sourceTree = "<group>"; };
@@ -158,6 +169,8 @@
 			children = (
 				251012E51D70A08800BBBEB5 /* WKEssenceViewController.h */,
 				251012E61D70A08800BBBEB5 /* WKEssenceViewController.m */,
+				258537F31D7202EE006AD5FE /* WKEssenceTagViewController.h */,
+				258537F41D7202EE006AD5FE /* WKEssenceTagViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -165,6 +178,8 @@
 		251012C31D709E3000BBBEB5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				258537F61D720377006AD5FE /* WKEssenceTage.h */,
+				258537F71D720377006AD5FE /* WKEssenceTage.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,6 +187,9 @@
 		251012C41D709E3000BBBEB5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				258537F91D720589006AD5FE /* WKEssenceTageCell.h */,
+				258537FA1D720589006AD5FE /* WKEssenceTageCell.m */,
+				258537FB1D720589006AD5FE /* WKEssenceTageCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -528,6 +546,7 @@
 			files = (
 				258537EA1D71A95F006AD5FE /* WKFriendCategoryCell.xib in Resources */,
 				25BF21F31D70BBE9003271C0 /* WKFriendViewController.xib in Resources */,
+				258537FD1D720589006AD5FE /* WKEssenceTageCell.xib in Resources */,
 				258537F21D71BE22006AD5FE /* WKFriendUserCell.xib in Resources */,
 				254918341D6F701600601E06 /* LaunchScreen.storyboard in Resources */,
 				254918311D6F701600601E06 /* Assets.xcassets in Resources */,
@@ -608,10 +627,13 @@
 				251012EA1D70A09F00BBBEB5 /* WKNewViewController.m in Sources */,
 				258537ED1D71BDAE006AD5FE /* WKFriendUser.m in Sources */,
 				25BF21EE1D70B2D7003271C0 /* WKBarButtonItem.m in Sources */,
+				258537F51D7202EE006AD5FE /* WKEssenceTagViewController.m in Sources */,
 				251012EE1D70A0B500BBBEB5 /* WKFriendTrendsViewController.m in Sources */,
 				251012F21D70A0CD00BBBEB5 /* WKMeViewController.m in Sources */,
+				258537FC1D720589006AD5FE /* WKEssenceTageCell.m in Sources */,
 				251012F51D70A87800BBBEB5 /* WKNavViewController.m in Sources */,
 				25BF21F21D70BBE9003271C0 /* WKFriendViewController.m in Sources */,
+				258537F81D720377006AD5FE /* WKEssenceTage.m in Sources */,
 				251012D91D709E3000BBBEB5 /* AppDelegate.m in Sources */,
 				251012F81D70A97500BBBEB5 /* WKTabBar.m in Sources */,
 				258537E51D71A86F006AD5FE /* WKFriendCategory.m in Sources */,

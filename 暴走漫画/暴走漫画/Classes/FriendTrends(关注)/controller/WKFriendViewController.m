@@ -67,6 +67,8 @@ const static NSString *userId = @"user";
 
     self.navigationItem.title = @"推荐关注";
     
+    self.view.backgroundColor = WKGrobeColor;
+    
     //设置行高
     self.userTableView.rowHeight = 70;
     
@@ -130,6 +132,7 @@ const static NSString *userId = @"user";
     
     //设置上拉刷新更多数据
     self.userTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreMessage)];
+    
 
     self.userTableView.mj_footer.hidden = YES;
 }

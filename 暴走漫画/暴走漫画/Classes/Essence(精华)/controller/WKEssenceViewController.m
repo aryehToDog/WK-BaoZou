@@ -7,7 +7,7 @@
 //
 
 #import "WKEssenceViewController.h"
-
+#import "WKEssenceTagViewController.h"
 @interface WKEssenceViewController ()
 
 @end
@@ -36,7 +36,8 @@
 
 - (void)clickBtn {
 
-    WKLog(@"%s",__func__);
+    WKEssenceTagViewController *tagVc = [[WKEssenceTagViewController alloc]init];
+    [self.navigationController pushViewController:tagVc animated:YES];
 
 }
 
