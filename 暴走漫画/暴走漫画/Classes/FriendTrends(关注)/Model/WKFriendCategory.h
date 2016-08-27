@@ -17,6 +17,12 @@
 /** id */
 @property (nonatomic,assign)NSInteger id;
 
+/** 每个请求对应的用户数据 */
+@property (nonatomic,strong)NSMutableArray *users;
 
+/** 返回总数 */
+@property (nonatomic,assign)NSInteger total;
+/** 当前页码数 */
+@property (nonatomic,assign)NSInteger currentPage;
 
 @end

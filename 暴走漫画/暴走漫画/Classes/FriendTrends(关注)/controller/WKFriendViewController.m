@@ -5,6 +5,11 @@
 //  Created by 阿拉斯加的狗 on 16/8/27.
 //  Copyright © 2016年 阿拉斯加的🐶. All rights reserved.
 //
+/**
+ 1.目前只能显示1页数据
+ 2.重复发送请求
+ 3.网络慢带来的细节问题
+ */
 
 #import "WKFriendViewController.h"
 #import <AFNetworking.h>
@@ -14,14 +19,20 @@
 #import <MJExtension.h>
 #import "WKFriendUser.h"
 #import "WKFriendUserCell.h"
+#import <MJRefresh.h>
+
+#define WKCategory self.categorys[self.categoryTableView.indexPathForSelectedRow.row]
 @interface WKFriendViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *categoryTableView;
 @property (weak, nonatomic) IBOutlet UITableView *userTableView;
 
+/** 防止请求控制器销毁问题 */
+@property (nonatomic,strong)AFHTTPSessionManager *manager;
+/** 防止请求防止重复 */
+@property (nonatomic,strong)NSMutableDictionary *parame;
+
 /** 定义一个分类数组 */
 @property (nonatomic,strong)NSArray *categorys;
-/** 定义一个用户数组 */
-@property (nonatomic,strong)NSArray *users;
 
 @end
 
@@ -29,6 +40,14 @@ const static NSString *categoryId = @"category";
 const static NSString *userId = @"user";
 
 @implementation WKFriendViewController
+
+- (AFHTTPSessionManager *)manager {
+
+    if (_manager == nil) {
+        _manager = [AFHTTPSessionManager manager];
+    }
+    return _manager;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,8 +58,8 @@ const static NSString *userId = @"user";
     //设置左边数据请求
     [self setUpleftRequest];
     
-    
-    
+    //设置刷新控件
+    [self setUpRefresh];
 }
 
 
@@ -75,7 +94,8 @@ const static NSString *userId = @"user";
     NSMutableDictionary *parame = [NSMutableDictionary dictionary];
     parame[@"a"] = @"category";
     parame[@"c"] = @"subscribe";
-    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:parame progress:^(NSProgress * _Nonnull downloadProgress) {
+    
+    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:parame progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
@@ -90,6 +110,9 @@ const static NSString *userId = @"user";
         //显示第一个标签
         [self.categoryTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionTop];
         
+        //开始刷新
+        [self.userTableView.mj_header beginRefreshing];
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
         [SVProgressHUD showErrorWithStatus:@"请求服务加载失败"];
@@ -100,14 +123,141 @@ const static NSString *userId = @"user";
 
 }
 
-#pragma mark - UITableViewDataSource 
+- (void)setUpRefresh {
+
+    //设置下拉刷新更多数据
+    self.userTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewMessage)];
+    
+    //设置上拉刷新更多数据
+    self.userTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreMessage)];
+
+    self.userTableView.mj_footer.hidden = YES;
+}
+
+//下拉刷新更多数据
+- (void)loadNewMessage {
+
+    WKFriendCategory *category = WKCategory;
+    
+    //设置页码数
+    category.currentPage = 1;
+    
+    //发送右边数据请求
+    NSMutableDictionary *parame = [NSMutableDictionary dictionary];
+    parame[@"a"] = @"list";
+    parame[@"c"] = @"subscribe";
+    parame[@"category_id"] = @(category.id);
+    //页码数
+    parame[@"page"] = @(category.currentPage);
+    self.parame = parame;
+    
+    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:parame progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        //字典转模型
+        NSArray *user = [WKFriendUser mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        
+        //清空以前的数据
+        [category.users removeAllObjects];
+        //拼接模型数据
+        [category.users addObjectsFromArray:user];
+        
+        if (self.parame != parame) return;
+        
+        //保存总用户数
+        category.total = [responseObject[@"total"] integerValue];
+        
+        [self.userTableView reloadData];
+        
+        //结束下拉刷新
+        [self.userTableView.mj_header endRefreshing];
+        
+        [self cheakFootState];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        [SVProgressHUD showErrorWithStatus:@"数据加载失败"];
+        
+        [self.userTableView.mj_header endRefreshing];
+    }];
+
+    
+
+}
+
+//上拉刷新更多数据
+- (void)loadMoreMessage {
+
+    WKFriendCategory *category = WKCategory;
+    
+    //发送右边数据请求
+    NSMutableDictionary *parame = [NSMutableDictionary dictionary];
+    parame[@"a"] = @"list";
+    parame[@"c"] = @"subscribe";
+    parame[@"category_id"] = @(category.id);
+    //页码数
+    parame[@"page"] = @(++category.currentPage);
+    self.parame = parame;
+    
+    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:parame progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        //字典转模型
+        NSArray *user = [WKFriendUser mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        
+        //拼接模型数据
+        [category.users addObjectsFromArray:user];
+  
+        if (self.parame != parame) return ;
+  
+        [self.userTableView reloadData];
+        
+        [self cheakFootState];
+        
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        [SVProgressHUD showErrorWithStatus:@"数据加载失败"];
+        
+        [self.userTableView.mj_footer endRefreshing];
+    }];
+
+}
+
+//检查foot是否显示及结束
+- (void)cheakFootState {
+
+    WKFriendCategory *category = WKCategory;
+    
+    //让底部控件结束刷新
+    self.userTableView.mj_footer.hidden = (category.users.count == 0);
+    
+    //让底部控件进行刷新
+    if (category.total == category.users.count ) {
+        //没有数据进行刷新
+        [self.userTableView.mj_footer endRefreshingWithNoMoreData];
+        
+    }else {
+        //结束刷新
+        [self.userTableView.mj_footer endRefreshing];
+    }
+
+
+}
+
+#pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
+    
     if (tableView == self.categoryTableView) {
         return self.categorys.count;
     } else {
-        
-        return self.users.count;
+        //左边被选中的类型
+//        WKFriendCategory *category = self.categorys[self.categoryTableView.indexPathForSelectedRow.row];
+//        return category.users.count;
+        return [WKCategory users].count;
     }
     
     
@@ -128,7 +278,9 @@ const static NSString *userId = @"user";
     } else {
     
         WKFriendUserCell *cell = [tableView dequeueReusableCellWithIdentifier:userId];
-        WKFriendUser *user = self.users[indexPath.row];
+        
+//        WKFriendCategory *category = self.categorys[self.categoryTableView.indexPathForSelectedRow.row];
+        WKFriendUser *user = [WKCategory users][indexPath.row];
         
         cell.uesr = user;
         
@@ -143,31 +295,31 @@ const static NSString *userId = @"user";
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
+    //每次结束刷新
+    [self.userTableView.mj_header endRefreshing];
+    [self.userTableView.mj_footer endRefreshing];
+    
     WKFriendCategory *category = self.categorys[indexPath.row];
     
-    //发送左边数据请求
-    NSMutableDictionary *parame = [NSMutableDictionary dictionary];
-    parame[@"a"] = @"list";
-    parame[@"c"] = @"subscribe";
-    parame[@"category_id"] = @(category.id);
-    
-    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:parame progress:^(NSProgress * _Nonnull downloadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
-        //字典转模型
-        self.users = [WKFriendUser mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
-        
-        WKLog(@"%@",responseObject);
-        
+    //判断是否发送请求
+    if (category.users.count) {
+     //直接显示数据
         [self.userTableView reloadData];
         
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } else {
+      //清空以前加载的数据
+        [self.userTableView reloadData];
         
-        WKLog(@"请求数据失败");
-        
-    }];
+        [self.userTableView.mj_header beginRefreshing];
+    }
+    
+    
+}
 
+//取消数据请求
+- (void)dealloc {
+
+    [self.manager.operationQueue cancelAllOperations];
 }
 
 
