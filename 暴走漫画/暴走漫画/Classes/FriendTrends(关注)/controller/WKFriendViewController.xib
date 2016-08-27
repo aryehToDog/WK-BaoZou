@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WKFriendViewController">
             <connections>
+                <outlet property="categoryTableView" destination="zhi-RR-Vu1" id="6c7-qx-e1t"/>
+                <outlet property="userTableView" destination="VLO-Oz-SWB" id="j23-ya-HCh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +16,38 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zhi-RR-Vu1" userLabel="左边">
+                    <rect key="frame" x="0.0" y="0.0" width="70" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="4GY-KD-QsI"/>
+                    </constraints>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="eoV-wZ-pue"/>
+                        <outlet property="delegate" destination="-1" id="zOt-KB-oz5"/>
+                    </connections>
+                </tableView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VLO-Oz-SWB" userLabel="右边">
+                    <rect key="frame" x="70" y="0.0" width="530" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="yuW-nC-j6L"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="VLO-Oz-SWB" secondAttribute="trailing" id="PXV-eo-LKf"/>
+                <constraint firstItem="zhi-RR-Vu1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="V1p-7I-kYH"/>
+                <constraint firstItem="VLO-Oz-SWB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="aG0-8G-bdU"/>
+                <constraint firstAttribute="bottom" secondItem="VLO-Oz-SWB" secondAttribute="bottom" id="jY0-r1-6HM"/>
+                <constraint firstAttribute="bottom" secondItem="zhi-RR-Vu1" secondAttribute="bottom" id="qEt-HM-biA"/>
+                <constraint firstItem="zhi-RR-Vu1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vdh-gc-sT5"/>
+                <constraint firstItem="VLO-Oz-SWB" firstAttribute="leading" secondItem="zhi-RR-Vu1" secondAttribute="trailing" id="zAw-hu-8ai"/>
+            </constraints>
+            <point key="canvasLocation" x="346" y="285"/>
         </view>
     </objects>
 </document>
