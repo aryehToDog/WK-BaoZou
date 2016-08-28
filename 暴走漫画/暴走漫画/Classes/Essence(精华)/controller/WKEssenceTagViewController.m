@@ -72,6 +72,8 @@ const static NSString *tagId = @"tage";
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
+        WKLog(@"%@",error);
+        
         [SVProgressHUD showErrorWithStatus:@"数据加载失败"];
         
     }];

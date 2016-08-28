@@ -8,6 +8,7 @@
 
 #import "WKFriendTrendsViewController.h"
 #import "WKFriendViewController.h"
+#import "WKloginReguistViewController.h"
 @interface WKFriendTrendsViewController ()
 
 @end
@@ -42,14 +43,17 @@
     [self.navigationController pushViewController:friendVc animated:YES];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+///
+///
+/// @param sender 登陆注册页面
+- (IBAction)loginReguist:(id)sender {
+    
+    WKloginReguistViewController *loginVc = [[WKloginReguistViewController alloc]init];
+    
+    [self presentViewController:loginVc animated:YES completion:nil];
 }
-*/
+
+
 
 @end
