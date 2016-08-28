@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "WKTabBarController.h";
+#import "WKguideView.h"
 @interface AppDelegate ()
 
 @end
@@ -23,6 +24,9 @@
     self.window.rootViewController = [[WKTabBarController alloc]init];
     
     [self.window makeKeyAndVisible];
+    
+    //判断引导界面的显示及隐藏
+    [WKguideView show];
     
     return YES;
 }

@@ -40,6 +40,8 @@
 		25F04BC51D727DBC0006D241 /* WKloginReguistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25F04BC31D727DBC0006D241 /* WKloginReguistViewController.xib */; };
 		25F04BC81D7285650006D241 /* WKloginReguistBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F04BC71D7285650006D241 /* WKloginReguistBtn.m */; };
 		25F04BCB1D7292BF0006D241 /* WKTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F04BCA1D7292BF0006D241 /* WKTextField.m */; };
+		25F04BCE1D72ED0E0006D241 /* WKguideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F04BCD1D72ED0E0006D241 /* WKguideView.m */; };
+		25F04BD01D72ED1F0006D241 /* WKguideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25F04BCF1D72ED1F0006D241 /* WKguideView.xib */; };
 		72F161B0542589A198F0532B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7C20FC83476B56F0FD146A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +124,9 @@
 		25F04BC71D7285650006D241 /* WKloginReguistBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKloginReguistBtn.m; sourceTree = "<group>"; };
 		25F04BC91D7292BF0006D241 /* WKTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKTextField.h; sourceTree = "<group>"; };
 		25F04BCA1D7292BF0006D241 /* WKTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKTextField.m; sourceTree = "<group>"; };
+		25F04BCC1D72ED0E0006D241 /* WKguideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKguideView.h; sourceTree = "<group>"; };
+		25F04BCD1D72ED0E0006D241 /* WKguideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKguideView.m; sourceTree = "<group>"; };
+		25F04BCF1D72ED1F0006D241 /* WKguideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WKguideView.xib; sourceTree = "<group>"; };
 		AA7C20FC83476B56F0FD146A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B32DB8C1AFBD17DFC5FA2EF1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F7B9166F97FDD9F80CCED910 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -375,6 +380,9 @@
 			children = (
 				251012F61D70A97500BBBEB5 /* WKTabBar.h */,
 				251012F71D70A97500BBBEB5 /* WKTabBar.m */,
+				25F04BCC1D72ED0E0006D241 /* WKguideView.h */,
+				25F04BCD1D72ED0E0006D241 /* WKguideView.m */,
+				25F04BCF1D72ED1F0006D241 /* WKguideView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -565,6 +573,7 @@
 				258537EA1D71A95F006AD5FE /* WKFriendCategoryCell.xib in Resources */,
 				25BF21F31D70BBE9003271C0 /* WKFriendViewController.xib in Resources */,
 				258537FD1D720589006AD5FE /* WKEssenceTageCell.xib in Resources */,
+				25F04BD01D72ED1F0006D241 /* WKguideView.xib in Resources */,
 				258537F21D71BE22006AD5FE /* WKFriendUserCell.xib in Resources */,
 				25F04BC51D727DBC0006D241 /* WKloginReguistViewController.xib in Resources */,
 				254918341D6F701600601E06 /* LaunchScreen.storyboard in Resources */,
@@ -645,6 +654,7 @@
 				251012DA1D709E3000BBBEB5 /* main.m in Sources */,
 				251012EA1D70A09F00BBBEB5 /* WKNewViewController.m in Sources */,
 				258537ED1D71BDAE006AD5FE /* WKFriendUser.m in Sources */,
+				25F04BCE1D72ED0E0006D241 /* WKguideView.m in Sources */,
 				25BF21EE1D70B2D7003271C0 /* WKBarButtonItem.m in Sources */,
 				25F04BCB1D7292BF0006D241 /* WKTextField.m in Sources */,
 				258537F51D7202EE006AD5FE /* WKEssenceTagViewController.m in Sources */,

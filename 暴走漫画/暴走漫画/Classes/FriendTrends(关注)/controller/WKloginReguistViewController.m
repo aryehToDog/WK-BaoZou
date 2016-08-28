@@ -47,6 +47,10 @@
 
     }
     
+    [UIView animateWithDuration:0.25 animations:^{
+        [self.view layoutIfNeeded];
+    }];
+    
 }
 
 - (void)viewDidLoad {
