@@ -158,10 +158,6 @@
         
         button.frame = CGRectMake(buttonX, buttonY, buttonW, buttonH);
         
-//        [button layoutIfNeeded];
-        
-        button.backgroundColor = [UIColor blueColor];
-        
         //添加按钮的点击
         [button addTarget:self action:@selector(clickTitleBtn:) forControlEvents:UIControlEventTouchUpInside];
         [titleView addSubview:button];
@@ -175,8 +171,8 @@
             self.selectedBtn = button;
             
             [button.titleLabel sizeToFit];
-            self.redView.centerX = button.centerX - 13;
             self.redView.width = button.titleLabel.width;
+            self.redView.centerX = button.centerX;
             
         }
     }
