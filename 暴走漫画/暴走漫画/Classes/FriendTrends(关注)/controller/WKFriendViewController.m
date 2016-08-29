@@ -36,8 +36,8 @@
 
 @end
 
-const static NSString *categoryId = @"category";
-const static NSString *userId = @"user";
+ static NSString *const categoryId = @"category";
+ static NSString *const userId = @"user";
 
 @implementation WKFriendViewController
 

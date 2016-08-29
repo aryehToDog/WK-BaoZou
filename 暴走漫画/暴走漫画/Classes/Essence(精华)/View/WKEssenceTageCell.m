@@ -22,7 +22,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
+    
 }
 
 - (void)setTage:(WKEssenceTage *)tage {

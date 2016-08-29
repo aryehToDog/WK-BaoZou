@@ -36,6 +36,10 @@
 		25BF21EE1D70B2D7003271C0 /* WKBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF21ED1D70B2D7003271C0 /* WKBarButtonItem.m */; };
 		25BF21F21D70BBE9003271C0 /* WKFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BF21F01D70BBE9003271C0 /* WKFriendViewController.m */; };
 		25BF21F31D70BBE9003271C0 /* WKFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25BF21F11D70BBE9003271C0 /* WKFriendViewController.xib */; };
+		25DF187F1D749FC9003EF3CC /* WKCards.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DF187E1D749FC9003EF3CC /* WKCards.m */; };
+		25DF18831D74A31D003EF3CC /* WKCardsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DF18811D74A31D003EF3CC /* WKCardsCell.m */; };
+		25DF18841D74A31D003EF3CC /* WKCardsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25DF18821D74A31D003EF3CC /* WKCardsCell.xib */; };
+		25DF188A1D74B8E8003EF3CC /* NSDate+WKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DF18891D74B8E8003EF3CC /* NSDate+WKExtension.m */; };
 		25F04BC41D727DBC0006D241 /* WKloginReguistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F04BC21D727DBC0006D241 /* WKloginReguistViewController.m */; };
 		25F04BC51D727DBC0006D241 /* WKloginReguistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25F04BC31D727DBC0006D241 /* WKloginReguistViewController.xib */; };
 		25F04BC81D7285650006D241 /* WKloginReguistBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F04BC71D7285650006D241 /* WKloginReguistBtn.m */; };
@@ -122,6 +126,13 @@
 		25BF21EF1D70BBE9003271C0 /* WKFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKFriendViewController.h; sourceTree = "<group>"; };
 		25BF21F01D70BBE9003271C0 /* WKFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKFriendViewController.m; sourceTree = "<group>"; };
 		25BF21F11D70BBE9003271C0 /* WKFriendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WKFriendViewController.xib; sourceTree = "<group>"; };
+		25DF187D1D749FC9003EF3CC /* WKCards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKCards.h; sourceTree = "<group>"; };
+		25DF187E1D749FC9003EF3CC /* WKCards.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKCards.m; sourceTree = "<group>"; };
+		25DF18801D74A31D003EF3CC /* WKCardsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKCardsCell.h; sourceTree = "<group>"; };
+		25DF18811D74A31D003EF3CC /* WKCardsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKCardsCell.m; sourceTree = "<group>"; };
+		25DF18821D74A31D003EF3CC /* WKCardsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WKCardsCell.xib; sourceTree = "<group>"; };
+		25DF18881D74B8E8003EF3CC /* NSDate+WKExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+WKExtension.h"; sourceTree = "<group>"; };
+		25DF18891D74B8E8003EF3CC /* NSDate+WKExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+WKExtension.m"; sourceTree = "<group>"; };
 		25F04BC11D727DBC0006D241 /* WKloginReguistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKloginReguistViewController.h; sourceTree = "<group>"; };
 		25F04BC21D727DBC0006D241 /* WKloginReguistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKloginReguistViewController.m; sourceTree = "<group>"; };
 		25F04BC31D727DBC0006D241 /* WKloginReguistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WKloginReguistViewController.xib; sourceTree = "<group>"; };
@@ -221,6 +232,8 @@
 			children = (
 				258537F61D720377006AD5FE /* WKEssenceTage.h */,
 				258537F71D720377006AD5FE /* WKEssenceTage.m */,
+				25DF187D1D749FC9003EF3CC /* WKCards.h */,
+				25DF187E1D749FC9003EF3CC /* WKCards.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -231,6 +244,9 @@
 				258537F91D720589006AD5FE /* WKEssenceTageCell.h */,
 				258537FA1D720589006AD5FE /* WKEssenceTageCell.m */,
 				258537FB1D720589006AD5FE /* WKEssenceTageCell.xib */,
+				25DF18801D74A31D003EF3CC /* WKCardsCell.h */,
+				25DF18811D74A31D003EF3CC /* WKCardsCell.m */,
+				25DF18821D74A31D003EF3CC /* WKCardsCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -378,6 +394,8 @@
 				251012E01D709FBB00BBBEB5 /* Foundation+Log.m */,
 				25BF21EC1D70B2D7003271C0 /* WKBarButtonItem.h */,
 				25BF21ED1D70B2D7003271C0 /* WKBarButtonItem.m */,
+				25DF18881D74B8E8003EF3CC /* NSDate+WKExtension.h */,
+				25DF18891D74B8E8003EF3CC /* NSDate+WKExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -602,6 +620,7 @@
 				258537F21D71BE22006AD5FE /* WKFriendUserCell.xib in Resources */,
 				25F04BC51D727DBC0006D241 /* WKloginReguistViewController.xib in Resources */,
 				254918341D6F701600601E06 /* LaunchScreen.storyboard in Resources */,
+				25DF18841D74A31D003EF3CC /* WKCardsCell.xib in Resources */,
 				254918311D6F701600601E06 /* Assets.xcassets in Resources */,
 				251012EF1D70A0B500BBBEB5 /* WKFriendTrendsViewController.xib in Resources */,
 			);
@@ -689,15 +708,18 @@
 				251012F21D70A0CD00BBBEB5 /* WKMeViewController.m in Sources */,
 				258537FC1D720589006AD5FE /* WKEssenceTageCell.m in Sources */,
 				25F04BC81D7285650006D241 /* WKloginReguistBtn.m in Sources */,
+				25DF187F1D749FC9003EF3CC /* WKCards.m in Sources */,
 				251012F51D70A87800BBBEB5 /* WKNavViewController.m in Sources */,
 				25BF21F21D70BBE9003271C0 /* WKFriendViewController.m in Sources */,
 				258537F81D720377006AD5FE /* WKEssenceTage.m in Sources */,
+				25DF18831D74A31D003EF3CC /* WKCardsCell.m in Sources */,
 				251012D91D709E3000BBBEB5 /* AppDelegate.m in Sources */,
 				251012F81D70A97500BBBEB5 /* WKTabBar.m in Sources */,
 				258537E51D71A86F006AD5FE /* WKFriendCategory.m in Sources */,
 				251012DD1D709EC100BBBEB5 /* WKTabBarController.m in Sources */,
 				251012E41D709FD000BBBEB5 /* UIView+Frame.m in Sources */,
 				251012E11D709FBB00BBBEB5 /* Foundation+Log.m in Sources */,
+				25DF188A1D74B8E8003EF3CC /* NSDate+WKExtension.m in Sources */,
 				25F04BDC1D72F5C80006D241 /* WKPictureViewController.m in Sources */,
 				25F04BD61D72F5A10006D241 /* WKVideoViewController.m in Sources */,
 				258537F11D71BE22006AD5FE /* WKFriendUserCell.m in Sources */,
