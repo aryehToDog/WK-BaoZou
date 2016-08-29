@@ -8,7 +8,21 @@
 
 #import "WKEssenceViewController.h"
 #import "WKEssenceTagViewController.h"
-@interface WKEssenceViewController ()
+#import "WKAllViewController.h"
+#import "WKVideoViewController.h"
+#import "WKVoiceViewController.h"
+#import "WKPictureViewController.h"
+#import "WKTextViewController.h"
+@interface WKEssenceViewController () <UIScrollViewDelegate>
+
+//指示器的view
+@property (nonatomic,strong)UIView *redView;
+//选中点击的按钮
+@property (nonatomic,strong)UIButton *selectedBtn;
+//scollview
+@property (nonatomic,strong)UIScrollView *contentView;
+//获取titleView
+@property (nonatomic,strong)UIView *titleView;
 
 @end
 
@@ -22,8 +36,17 @@
     //设置导航条内容
     [self setUpItem];
     
+    //初始化控制器
+    [self setupChildVc];
+    
+    //创建头部标签
+    [self setupTitleView];
+    
+    //创建scollview
+    [self setupContenView];
+    
 }
-
+//设置导航条内容
 - (void)setUpItem {
 
     //设置导航条View
@@ -34,26 +57,187 @@
 
 }
 
+//初始化控制器
+- (void)setupChildVc {
+    
+    WKAllViewController *allVc = [[WKAllViewController alloc]init];
+    allVc.title = @"全部";
+    [self addChildViewController:allVc];
+
+    WKVideoViewController *videoVc = [[WKVideoViewController alloc]init];
+    videoVc.title = @"视频";
+    [self addChildViewController:videoVc];
+    
+    WKVoiceViewController *voiceVc = [[WKVoiceViewController alloc]init];
+    voiceVc.title = @"声音";
+    [self addChildViewController:voiceVc];
+    
+    WKPictureViewController *pictureVc = [[WKPictureViewController alloc]init];
+    pictureVc.title = @"图片";
+    [self addChildViewController:pictureVc];
+    
+    WKTextViewController *textVc = [[WKTextViewController alloc]init];
+    textVc.title = @"段子";
+    [self addChildViewController:textVc];
+    
+}
+
 - (void)clickBtn {
 
     WKEssenceTagViewController *tagVc = [[WKEssenceTagViewController alloc]init];
     [self.navigationController pushViewController:tagVc animated:YES];
 
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+//创建scollview
+- (void)setupContenView {
+    
+    //取消自动布局
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    //添加scorllview
+    UIScrollView *contentView = [[UIScrollView alloc]init];
+    contentView.frame = self.view.bounds;
+    contentView.delegate = self;
+    contentView.pagingEnabled = YES;
+    //插入到titleview之上,最开始显示
+    [self.view insertSubview:contentView atIndex:0];
+    
+    //设置scorllView的contsize
+    NSInteger count = self.childViewControllers.count;
+    contentView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width * count, 0);
+    
+    self.contentView = contentView;
+    
+    //开始显示第一个控制器
+    [self scrollViewDidEndScrollingAnimation:contentView];
 }
 
-/*
-#pragma mark - Navigation
+//创建头部标签
+- (void)setupTitleView {
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    //创建头部标签
+    UIView *titleView = [[UIView alloc]init];
+    titleView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.5];
+    
+    //设置frame
+    CGFloat titleViewX = 0;
+    CGFloat titleViewY = 64;
+    CGFloat titleViewW = self.view.width;
+    CGFloat titleViewH = 30;
+    titleView.frame = CGRectMake(titleViewX, titleViewY, titleViewW, titleViewH);
+    [self.view addSubview:titleView];
+    self.titleView = titleView;
+    
+    //创建一个指示器View
+    UIView *redView = [[UIView alloc]init];
+    redView.backgroundColor = [UIColor redColor];
+    redView.tag = -1;
+    redView.height = 2;
+    redView.y = titleView.height - redView.height;
+    self.redView = redView;
+    
+//    NSArray *titles = @[@"全部",@"视频",@"声音",@"图片",@"段子"];
+    
+    NSInteger count = self.childViewControllers.count;
+    CGFloat buttonH = titleView.height;
+    CGFloat buttonW = titleView.width / count;
+    CGFloat buttonY = 0;
+    //创建内部按钮标签
+    
+    for (NSInteger i = 0; i < count; i ++) {
+        
+        UIButton *button = [[UIButton alloc]init];
+        button.tag = i;
+        [button setTitle:[self.childViewControllers[i] title] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor redColor] forState:UIControlStateDisabled];
+        button.titleLabel.font = [UIFont systemFontOfSize:14];
+        //按钮内文字居中
+        button.titleLabel.textAlignment = NSTextAlignmentCenter;
+        CGFloat buttonX = i * buttonW;
+        
+        button.frame = CGRectMake(buttonX, buttonY, buttonW, buttonH);
+        
+        //添加按钮的点击
+        [button addTarget:self action:@selector(clickTitleBtn:) forControlEvents:UIControlEventTouchUpInside];
+        [titleView addSubview:button];
+        
+//        WKLog(@"%@",NSStringFromCGRect(button.frame));
+        
+        //设置默认选中按钮
+        if (i == 0) {
+            //按钮内文字自动布局
+            button.enabled = NO;
+            self.selectedBtn = button;
+            
+            [button.titleLabel sizeToFit];
+            self.redView.centerX = button.centerX;
+            self.redView.width = button.titleLabel.width;
+            
+        }
+    }
+    
+         [titleView addSubview:redView];
 }
-*/
+
+//点击的按钮
+- (void)clickTitleBtn: (UIButton *)button {
+
+    self.selectedBtn.enabled = YES;
+    button.enabled = NO;
+    self.selectedBtn = button;
+    
+    //设置指示器的位置
+    [UIView animateWithDuration:0.25 animations:^{
+        
+        self.redView.width = button.titleLabel.width;
+        self.redView.centerX = button.centerX;
+    }];
+    
+    //获取scollview的偏移量
+    CGPoint offset = self.contentView.contentOffset;
+    offset.x = button.tag * self.contentView.width;
+    [self.contentView setContentOffset:offset animated:YES];
+    
+}
+
+
+
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+
+    //获取当前点击索引
+    NSInteger index = scrollView.contentOffset.x / self.view.width;
+    UITableViewController *vc = self.childViewControllers[index];
+    
+    //设置vc的内边距
+    CGFloat top = CGRectGetMaxY(self.titleView.frame);
+    CGFloat botton = self.tabBarController.tabBar.height;
+    
+    vc.tableView.contentInset = UIEdgeInsetsMake(top, 0, botton, 0);
+    vc.tableView.scrollIndicatorInsets = vc.tableView.contentInset;
+    CGFloat vcViewX = scrollView.contentOffset.x;
+    CGFloat vcViewH = scrollView.height;
+    CGFloat vcViewY = 0;
+    CGFloat vcViewW = scrollView.width;
+    
+    vc.view.frame = CGRectMake(vcViewX, vcViewY, vcViewW, vcViewH);
+    
+    [scrollView addSubview:vc.view];
+    
+}
+
+
+//当停止拖拽时候调用
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+
+    [self scrollViewDidEndScrollingAnimation:scrollView];
+    
+    //获取标签位置
+    NSInteger index = scrollView.contentOffset.x / scrollView.width;
+    
+    [self clickTitleBtn:self.titleView.subviews[index]];
+}
 
 @end

@@ -42,6 +42,11 @@
 		25F04BCB1D7292BF0006D241 /* WKTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F04BCA1D7292BF0006D241 /* WKTextField.m */; };
 		25F04BCE1D72ED0E0006D241 /* WKguideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F04BCD1D72ED0E0006D241 /* WKguideView.m */; };
 		25F04BD01D72ED1F0006D241 /* WKguideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25F04BCF1D72ED1F0006D241 /* WKguideView.xib */; };
+		25F04BD31D72F58A0006D241 /* WKAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F04BD21D72F58A0006D241 /* WKAllViewController.m */; };
+		25F04BD61D72F5A10006D241 /* WKVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F04BD51D72F5A10006D241 /* WKVideoViewController.m */; };
+		25F04BD91D72F5B30006D241 /* WKVoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F04BD81D72F5B30006D241 /* WKVoiceViewController.m */; };
+		25F04BDC1D72F5C80006D241 /* WKPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F04BDB1D72F5C80006D241 /* WKPictureViewController.m */; };
+		25F04BDF1D72F5EC0006D241 /* WKTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F04BDE1D72F5EC0006D241 /* WKTextViewController.m */; };
 		72F161B0542589A198F0532B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7C20FC83476B56F0FD146A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +132,16 @@
 		25F04BCC1D72ED0E0006D241 /* WKguideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKguideView.h; sourceTree = "<group>"; };
 		25F04BCD1D72ED0E0006D241 /* WKguideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKguideView.m; sourceTree = "<group>"; };
 		25F04BCF1D72ED1F0006D241 /* WKguideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WKguideView.xib; sourceTree = "<group>"; };
+		25F04BD11D72F58A0006D241 /* WKAllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKAllViewController.h; sourceTree = "<group>"; };
+		25F04BD21D72F58A0006D241 /* WKAllViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKAllViewController.m; sourceTree = "<group>"; };
+		25F04BD41D72F5A10006D241 /* WKVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKVideoViewController.h; sourceTree = "<group>"; };
+		25F04BD51D72F5A10006D241 /* WKVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKVideoViewController.m; sourceTree = "<group>"; };
+		25F04BD71D72F5B30006D241 /* WKVoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKVoiceViewController.h; sourceTree = "<group>"; };
+		25F04BD81D72F5B30006D241 /* WKVoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKVoiceViewController.m; sourceTree = "<group>"; };
+		25F04BDA1D72F5C80006D241 /* WKPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKPictureViewController.h; sourceTree = "<group>"; };
+		25F04BDB1D72F5C80006D241 /* WKPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKPictureViewController.m; sourceTree = "<group>"; };
+		25F04BDD1D72F5EC0006D241 /* WKTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKTextViewController.h; sourceTree = "<group>"; };
+		25F04BDE1D72F5EC0006D241 /* WKTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKTextViewController.m; sourceTree = "<group>"; };
 		AA7C20FC83476B56F0FD146A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B32DB8C1AFBD17DFC5FA2EF1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F7B9166F97FDD9F80CCED910 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -187,6 +202,16 @@
 				251012E61D70A08800BBBEB5 /* WKEssenceViewController.m */,
 				258537F31D7202EE006AD5FE /* WKEssenceTagViewController.h */,
 				258537F41D7202EE006AD5FE /* WKEssenceTagViewController.m */,
+				25F04BD11D72F58A0006D241 /* WKAllViewController.h */,
+				25F04BD21D72F58A0006D241 /* WKAllViewController.m */,
+				25F04BD41D72F5A10006D241 /* WKVideoViewController.h */,
+				25F04BD51D72F5A10006D241 /* WKVideoViewController.m */,
+				25F04BD71D72F5B30006D241 /* WKVoiceViewController.h */,
+				25F04BD81D72F5B30006D241 /* WKVoiceViewController.m */,
+				25F04BDA1D72F5C80006D241 /* WKPictureViewController.h */,
+				25F04BDB1D72F5C80006D241 /* WKPictureViewController.m */,
+				25F04BDD1D72F5EC0006D241 /* WKTextViewController.h */,
+				25F04BDE1D72F5EC0006D241 /* WKTextViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -655,9 +680,11 @@
 				251012EA1D70A09F00BBBEB5 /* WKNewViewController.m in Sources */,
 				258537ED1D71BDAE006AD5FE /* WKFriendUser.m in Sources */,
 				25F04BCE1D72ED0E0006D241 /* WKguideView.m in Sources */,
+				25F04BD91D72F5B30006D241 /* WKVoiceViewController.m in Sources */,
 				25BF21EE1D70B2D7003271C0 /* WKBarButtonItem.m in Sources */,
 				25F04BCB1D7292BF0006D241 /* WKTextField.m in Sources */,
 				258537F51D7202EE006AD5FE /* WKEssenceTagViewController.m in Sources */,
+				25F04BDF1D72F5EC0006D241 /* WKTextViewController.m in Sources */,
 				251012EE1D70A0B500BBBEB5 /* WKFriendTrendsViewController.m in Sources */,
 				251012F21D70A0CD00BBBEB5 /* WKMeViewController.m in Sources */,
 				258537FC1D720589006AD5FE /* WKEssenceTageCell.m in Sources */,
@@ -671,8 +698,11 @@
 				251012DD1D709EC100BBBEB5 /* WKTabBarController.m in Sources */,
 				251012E41D709FD000BBBEB5 /* UIView+Frame.m in Sources */,
 				251012E11D709FBB00BBBEB5 /* Foundation+Log.m in Sources */,
+				25F04BDC1D72F5C80006D241 /* WKPictureViewController.m in Sources */,
+				25F04BD61D72F5A10006D241 /* WKVideoViewController.m in Sources */,
 				258537F11D71BE22006AD5FE /* WKFriendUserCell.m in Sources */,
 				258537E91D71A95F006AD5FE /* WKFriendCategoryCell.m in Sources */,
+				25F04BD31D72F58A0006D241 /* WKAllViewController.m in Sources */,
 				25F04BC41D727DBC0006D241 /* WKloginReguistViewController.m in Sources */,
 				251012E71D70A08800BBBEB5 /* WKEssenceViewController.m in Sources */,
 			);
