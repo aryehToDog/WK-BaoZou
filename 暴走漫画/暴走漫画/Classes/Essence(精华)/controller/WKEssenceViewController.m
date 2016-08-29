@@ -153,10 +153,14 @@
         [button setTitleColor:[UIColor redColor] forState:UIControlStateDisabled];
         button.titleLabel.font = [UIFont systemFontOfSize:14];
         //按钮内文字居中
-        button.titleLabel.textAlignment = NSTextAlignmentCenter;
+//        button.titleLabel.textAlignment = NSTextAlignmentCenter;
         CGFloat buttonX = i * buttonW;
         
         button.frame = CGRectMake(buttonX, buttonY, buttonW, buttonH);
+        
+//        [button layoutIfNeeded];
+        
+        button.backgroundColor = [UIColor blueColor];
         
         //添加按钮的点击
         [button addTarget:self action:@selector(clickTitleBtn:) forControlEvents:UIControlEventTouchUpInside];
@@ -171,7 +175,7 @@
             self.selectedBtn = button;
             
             [button.titleLabel sizeToFit];
-            self.redView.centerX = button.centerX;
+            self.redView.centerX = button.centerX - 13;
             self.redView.width = button.titleLabel.width;
             
         }
