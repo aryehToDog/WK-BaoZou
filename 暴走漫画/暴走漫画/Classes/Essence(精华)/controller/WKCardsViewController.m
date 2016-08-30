@@ -1,19 +1,19 @@
 //
-//  WKTextViewController.m
+//  WKCardsViewController.m
 //  暴走漫画
 //
 //  Created by 阿拉斯加的狗 on 16/8/28.
 //  Copyright © 2016年 阿拉斯加的🐶. All rights reserved.
 //
 
-#import "WKTextViewController.h"
+#import "WKCardsViewController.h"
 #import <AFNetworking.h>
 #import <MJRefresh.h>
 #import "WKCards.h"
 #import <MJExtension.h>
 #import "WKCardsCell.h"
 
-@interface WKTextViewController ()
+@interface WKCardsViewController ()
 
 //定义一个段子数组
 @property (nonatomic,strong)NSMutableArray *cards;
@@ -25,7 +25,7 @@
 @property (nonatomic,strong)NSString *maxtime;
 @end
 
-@implementation WKTextViewController
+@implementation WKCardsViewController
 
 static NSString * const ID = @"cards";
 
@@ -52,32 +52,38 @@ static NSString * const ID = @"cards";
 
 //设置tableView的属性
 - (void)setupTableView {
-
+    
     self.tableView.backgroundColor = [UIColor clearColor];
+    
+    //设置vc的内边距
+    CGFloat top = WKTitilesViewH + WKTitilesViewY;
+    CGFloat botton = self.tabBarController.tabBar.height;
+    
+    self.tableView.contentInset = UIEdgeInsetsMake(top, 0, botton, 0);
+    self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
     
     //取消分割线
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     //注册cell
     [self.tableView registerNib:[UINib nibWithNibName:@"WKCardsCell" bundle:nil] forCellReuseIdentifier:ID];
-
-
+    
 }
 
 - (void)setupRefresh {
-
+    
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNews)];
     
     //自动改变下拉的透明度
     self.tableView.mj_header.automaticallyChangeAlpha = YES;
     //开始刷新
     [self.tableView.mj_header beginRefreshing];
-
+    
     self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMores)];
 }
 
 //下拉刷新
 - (void)loadNews {
-
+    
     //来到下拉就停止上拉
     [self.tableView.mj_footer endRefreshing];
     
@@ -85,7 +91,7 @@ static NSString * const ID = @"cards";
     NSMutableDictionary *parame = [NSMutableDictionary dictionary];
     parame[@"a"] =@"list";
     parame[@"c"] =@"data";
-    parame[@"type"] =@"29";
+    parame[@"type"] = @(self.type);
     self.parames = parame;
     [[AFHTTPSessionManager manager]GET:@"http://api.budejie.com/api/api_open.php" parameters:parame progress:^(NSProgress * _Nonnull downloadProgress) {
         
@@ -98,7 +104,7 @@ static NSString * const ID = @"cards";
         //字典数组转成模型数组
         self.cards = [WKCards mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
         //进行数据拼接
-//        [self.cards addObjectsFromArray:cardArray];
+        //        [self.cards addObjectsFromArray:cardArray];
         
         [self.tableView reloadData];
         //停止刷新
@@ -115,14 +121,14 @@ static NSString * const ID = @"cards";
         //停止刷新
         [self.tableView.mj_header endRefreshing];
     }];
-
-
+    
+    
 }
 
 
 //上拉加载
 - (void)loadMores {
-
+    
     //来到上拉就停止下拉
     [self.tableView.mj_header endRefreshing];
     
@@ -131,7 +137,7 @@ static NSString * const ID = @"cards";
     NSMutableDictionary *parame = [NSMutableDictionary dictionary];
     parame[@"a"] =@"list";
     parame[@"c"] =@"data";
-    parame[@"type"] =@"29";
+    parame[@"type"] =@(self.type);
     parame[@"page"] = @(self.currentPage);
     parame[@"maxtime"] = self.maxtime;
     self.parames = parame;
@@ -167,8 +173,8 @@ static NSString * const ID = @"cards";
         //页码数减一
         self.currentPage --;
     }];
-
-
+    
+    
 }
 
 #pragma mark - Table view data source
@@ -192,7 +198,7 @@ static NSString * const ID = @"cards";
 
 //设置行高
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-
+    
     return 200;
 }
 

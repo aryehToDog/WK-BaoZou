@@ -8,11 +8,7 @@
 
 #import "WKEssenceViewController.h"
 #import "WKEssenceTagViewController.h"
-#import "WKAllViewController.h"
-#import "WKVideoViewController.h"
-#import "WKVoiceViewController.h"
-#import "WKPictureViewController.h"
-#import "WKTextViewController.h"
+#import "WKCardsViewController.h"
 @interface WKEssenceViewController () <UIScrollViewDelegate>
 
 //指示器的view
@@ -60,23 +56,28 @@
 //初始化控制器
 - (void)setupChildVc {
     
-    WKAllViewController *allVc = [[WKAllViewController alloc]init];
+    WKCardsViewController *allVc = [[WKCardsViewController alloc]init];
+    allVc.type = WKCardsTypeAllVc;
     allVc.title = @"全部";
     [self addChildViewController:allVc];
-
-    WKVideoViewController *videoVc = [[WKVideoViewController alloc]init];
+    
+    WKCardsViewController *videoVc = [[WKCardsViewController alloc]init];
+    videoVc.type = WKCardsTypeVideo;
     videoVc.title = @"视频";
     [self addChildViewController:videoVc];
     
-    WKVoiceViewController *voiceVc = [[WKVoiceViewController alloc]init];
+    WKCardsViewController *voiceVc = [[WKCardsViewController alloc]init];
+    allVc.type = WKCardsTypeVoice;
     voiceVc.title = @"声音";
     [self addChildViewController:voiceVc];
     
-    WKPictureViewController *pictureVc = [[WKPictureViewController alloc]init];
+    WKCardsViewController *pictureVc = [[WKCardsViewController alloc]init];
+    pictureVc.type = WKCardsTypePicture;
     pictureVc.title = @"图片";
     [self addChildViewController:pictureVc];
     
-    WKTextViewController *textVc = [[WKTextViewController alloc]init];
+    WKCardsViewController *textVc = [[WKCardsViewController alloc]init];
+    textVc.type = WKCardsTypeText;
     textVc.title = @"段子";
     [self addChildViewController:textVc];
     
@@ -208,14 +209,9 @@
 
     //获取当前点击索引
     NSInteger index = scrollView.contentOffset.x / self.view.width;
-    UITableViewController *vc = self.childViewControllers[index];
+    UIViewController *vc = self.childViewControllers[index];
     
-    //设置vc的内边距
-    CGFloat top = CGRectGetMaxY(self.titleView.frame);
-    CGFloat botton = self.tabBarController.tabBar.height;
-    
-    vc.tableView.contentInset = UIEdgeInsetsMake(top, 0, botton, 0);
-    vc.tableView.scrollIndicatorInsets = vc.tableView.contentInset;
+    //设置frame
     CGFloat vcViewX = scrollView.contentOffset.x;
     CGFloat vcViewH = scrollView.height;
     CGFloat vcViewY = 0;
