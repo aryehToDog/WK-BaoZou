@@ -9,6 +9,7 @@
 #import "WKShowPictureViewController.h"
 #import "WKProgressView.h"
 #import "WKCards.h"
+#import <SVProgressHUD.h>
 #import <UIImageView+WebCache.h>
 @interface WKShowPictureViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *scorllView;
@@ -82,9 +83,27 @@
  */
 - (IBAction)saveBtn {
     
+    //图片没下载完不允许下载
+    if (self.pictureImageView.image == nil) {
+        [SVProgressHUD showErrorWithStatus:@"保存失败!"];
+        return;
+    }
     
+    UIImageWriteToSavedPhotosAlbum(self.pictureImageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
     
 }
+
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
+
+    if (error) {
+        [SVProgressHUD showErrorWithStatus:@"保存失败!"];
+    }else {
+    
+        [SVProgressHUD showSuccessWithStatus:@"保存成功"];
+    }
+
+}
+
 /**
  *  转发
  */
