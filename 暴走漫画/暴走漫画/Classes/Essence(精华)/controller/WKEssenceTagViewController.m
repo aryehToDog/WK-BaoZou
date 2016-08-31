@@ -18,7 +18,7 @@
 
 @end
 
-const static NSString *tagId = @"tage";
+ static NSString *const tagId = @"tage";
 @implementation WKEssenceTagViewController
 
 - (void)viewDidLoad {

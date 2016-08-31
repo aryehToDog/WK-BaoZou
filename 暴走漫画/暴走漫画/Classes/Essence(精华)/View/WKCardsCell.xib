@@ -144,8 +144,15 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile_AddV_authen" translatesAutoresizingMaskIntoConstraints="NO" id="Jc7-Ad-L1T" userLabel="VIP">
                         <rect key="frame" x="36" y="36" width="14" height="14"/>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c37-Ch-ts9">
+                        <rect key="frame" x="10" y="55" width="300" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="c37-Ch-ts9" firstAttribute="top" secondItem="23a-ds-Mzk" secondAttribute="bottom" constant="10" id="6ge-q4-Ptz"/>
                     <constraint firstAttribute="trailing" secondItem="IL3-W2-ucO" secondAttribute="trailing" id="ARq-ST-lgN"/>
                     <constraint firstItem="wFL-Jj-hIK" firstAttribute="top" secondItem="23a-ds-Mzk" secondAttribute="top" id="L1o-LR-HAL"/>
                     <constraint firstItem="wFL-Jj-hIK" firstAttribute="leading" secondItem="23a-ds-Mzk" secondAttribute="trailing" constant="8" id="PC5-yk-Sgz"/>
@@ -154,15 +161,18 @@
                     <constraint firstItem="82Q-n4-XkS" firstAttribute="bottom" secondItem="23a-ds-Mzk" secondAttribute="bottom" id="Uem-nK-dlK"/>
                     <constraint firstItem="23a-ds-Mzk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="UgD-yd-wus"/>
                     <constraint firstItem="IL3-W2-ucO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Vw9-1l-c9Y"/>
+                    <constraint firstItem="c37-Ch-ts9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="d8p-5V-1ck"/>
                     <constraint firstItem="Jc7-Ad-L1T" firstAttribute="bottom" secondItem="23a-ds-Mzk" secondAttribute="bottom" constant="5" id="dNL-0e-7CK"/>
                     <constraint firstAttribute="bottom" secondItem="IL3-W2-ucO" secondAttribute="bottom" id="heq-vj-UX0"/>
                     <constraint firstItem="FUy-53-naa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="kAg-ur-ZHz"/>
                     <constraint firstItem="Jc7-Ad-L1T" firstAttribute="trailing" secondItem="23a-ds-Mzk" secondAttribute="trailing" constant="5" id="nHj-Fd-PLr"/>
+                    <constraint firstAttribute="trailing" secondItem="c37-Ch-ts9" secondAttribute="trailing" constant="10" id="uRt-Fz-611"/>
                     <constraint firstAttribute="trailing" secondItem="FUy-53-naa" secondAttribute="trailing" constant="10" id="vPr-la-7IK"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="caiBtn" destination="FQ6-en-huh" id="VPD-FG-Ohw"/>
+                <outlet property="cardsLabel" destination="c37-Ch-ts9" id="qgy-YE-IvS"/>
                 <outlet property="commentBtn" destination="OKp-Qm-0ce" id="A3b-8M-zGd"/>
                 <outlet property="createTime" destination="82Q-n4-XkS" id="b6x-Sw-QQV"/>
                 <outlet property="dingBtn" destination="B1s-Hd-db2" id="wGF-jd-FNy"/>

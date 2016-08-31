@@ -9,6 +9,7 @@
 #import "WKCardsCell.h"
 #import <UIImageView+WebCache.h>
 #import "WKCards.h"
+#import "WKCardsPictureView.h"
 @interface WKCardsCell ()
 /** 图像 */
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
@@ -26,10 +27,28 @@
 @property (weak, nonatomic) IBOutlet UIButton *commentBtn;
 /** VIP认证 */
 @property (weak, nonatomic) IBOutlet UIImageView *vipIcon;
+/** 段子文字 */
+@property (weak, nonatomic) IBOutlet UILabel *cardsLabel;
+/** 图片模块的View */
+@property (nonatomic,strong)WKCardsPictureView *cardsPictureView;
 
 @end
 
 @implementation WKCardsCell
+
+- (WKCardsPictureView *)cardsPictureView {
+
+    if (!_cardsPictureView) {
+        
+        //将cardsPictureView 添加到cell中
+        WKCardsPictureView *cardsPictureView = [WKCardsPictureView pictureView];
+        [self.contentView addSubview:cardsPictureView];
+        
+        _cardsPictureView = cardsPictureView;
+    }
+
+    return _cardsPictureView;
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -67,6 +86,19 @@
     
     //判断是否是vip认证
     self.vipIcon.hidden = !cards.isSina_v;
+    
+    //设置段子文字
+    self.cardsLabel.text = cards.text;
+    
+    //判断当前选择模块所要显示的内容
+    if (cards.type == WKCardsTypePicture) {   //假如当前模块为图片模块
+        
+        self.cardsPictureView.cards = cards;
+        //frame模型进行赋值
+        self.cardsPictureView.frame = cards.pictureF;
+        
+    }
+    
 }
 
 //设置按钮

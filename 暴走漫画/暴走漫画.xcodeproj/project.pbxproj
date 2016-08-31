@@ -19,7 +19,6 @@
 		251012F21D70A0CD00BBBEB5 /* WKMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 251012F11D70A0CD00BBBEB5 /* WKMeViewController.m */; };
 		251012F51D70A87800BBBEB5 /* WKNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 251012F41D70A87800BBBEB5 /* WKNavViewController.m */; };
 		251012F81D70A97500BBBEB5 /* WKTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 251012F71D70A97500BBBEB5 /* WKTabBar.m */; };
-		254918311D6F701600601E06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 254918301D6F701600601E06 /* Assets.xcassets */; };
 		254918341D6F701600601E06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 254918321D6F701600601E06 /* LaunchScreen.storyboard */; };
 		2549183F1D6F701600601E06 /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2549183E1D6F701600601E06 /* ____Tests.m */; };
 		2549184A1D6F701600601E06 /* ____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 254918491D6F701600601E06 /* ____UITests.m */; };
@@ -42,6 +41,12 @@
 		25DF18831D74A31D003EF3CC /* WKCardsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DF18811D74A31D003EF3CC /* WKCardsCell.m */; };
 		25DF18841D74A31D003EF3CC /* WKCardsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25DF18821D74A31D003EF3CC /* WKCardsCell.xib */; };
 		25DF188A1D74B8E8003EF3CC /* NSDate+WKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DF18891D74B8E8003EF3CC /* NSDate+WKExtension.m */; };
+		25EC89051D77227F008F6392 /* WKCardsPictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EC89041D77227F008F6392 /* WKCardsPictureView.m */; };
+		25EC89071D7722A4008F6392 /* WKCardsPictureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25EC89061D7722A4008F6392 /* WKCardsPictureView.xib */; };
+		25EC890D1D7723E1008F6392 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25EC890C1D7723E1008F6392 /* Images.xcassets */; };
+		25EC89101D7738A9008F6392 /* WKProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EC890F1D7738A9008F6392 /* WKProgressView.m */; };
+		25EC89141D774786008F6392 /* WKShowPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EC89121D774786008F6392 /* WKShowPictureViewController.m */; };
+		25EC89151D774786008F6392 /* WKShowPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25EC89131D774786008F6392 /* WKShowPictureViewController.xib */; };
 		25F04BC41D727DBC0006D241 /* WKloginReguistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F04BC21D727DBC0006D241 /* WKloginReguistViewController.m */; };
 		25F04BC51D727DBC0006D241 /* WKloginReguistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25F04BC31D727DBC0006D241 /* WKloginReguistViewController.xib */; };
 		25F04BC81D7285650006D241 /* WKloginReguistBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F04BC71D7285650006D241 /* WKloginReguistBtn.m */; };
@@ -92,7 +97,6 @@
 		251012F61D70A97500BBBEB5 /* WKTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKTabBar.h; sourceTree = "<group>"; };
 		251012F71D70A97500BBBEB5 /* WKTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKTabBar.m; sourceTree = "<group>"; };
 		254918211D6F701600601E06 /* 暴走漫画.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "暴走漫画.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		254918301D6F701600601E06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		254918331D6F701600601E06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		254918351D6F701600601E06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2549183A1D6F701600601E06 /* 暴走漫画Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "暴走漫画Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +138,15 @@
 		25DF18821D74A31D003EF3CC /* WKCardsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WKCardsCell.xib; sourceTree = "<group>"; };
 		25DF18881D74B8E8003EF3CC /* NSDate+WKExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+WKExtension.h"; sourceTree = "<group>"; };
 		25DF18891D74B8E8003EF3CC /* NSDate+WKExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+WKExtension.m"; sourceTree = "<group>"; };
+		25EC89031D77227F008F6392 /* WKCardsPictureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKCardsPictureView.h; sourceTree = "<group>"; };
+		25EC89041D77227F008F6392 /* WKCardsPictureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKCardsPictureView.m; sourceTree = "<group>"; };
+		25EC89061D7722A4008F6392 /* WKCardsPictureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WKCardsPictureView.xib; sourceTree = "<group>"; };
+		25EC890C1D7723E1008F6392 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		25EC890E1D7738A9008F6392 /* WKProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKProgressView.h; sourceTree = "<group>"; };
+		25EC890F1D7738A9008F6392 /* WKProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKProgressView.m; sourceTree = "<group>"; };
+		25EC89111D774786008F6392 /* WKShowPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKShowPictureViewController.h; sourceTree = "<group>"; };
+		25EC89121D774786008F6392 /* WKShowPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKShowPictureViewController.m; sourceTree = "<group>"; };
+		25EC89131D774786008F6392 /* WKShowPictureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WKShowPictureViewController.xib; sourceTree = "<group>"; };
 		25F04BC11D727DBC0006D241 /* WKloginReguistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKloginReguistViewController.h; sourceTree = "<group>"; };
 		25F04BC21D727DBC0006D241 /* WKloginReguistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKloginReguistViewController.m; sourceTree = "<group>"; };
 		25F04BC31D727DBC0006D241 /* WKloginReguistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WKloginReguistViewController.xib; sourceTree = "<group>"; };
@@ -206,6 +219,9 @@
 				258537F41D7202EE006AD5FE /* WKEssenceTagViewController.m */,
 				2577E3621D7525E200D843F9 /* WKCardsViewController.h */,
 				2577E3631D7525E200D843F9 /* WKCardsViewController.m */,
+				25EC89111D774786008F6392 /* WKShowPictureViewController.h */,
+				25EC89121D774786008F6392 /* WKShowPictureViewController.m */,
+				25EC89131D774786008F6392 /* WKShowPictureViewController.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -230,6 +246,11 @@
 				25DF18801D74A31D003EF3CC /* WKCardsCell.h */,
 				25DF18811D74A31D003EF3CC /* WKCardsCell.m */,
 				25DF18821D74A31D003EF3CC /* WKCardsCell.xib */,
+				25EC89031D77227F008F6392 /* WKCardsPictureView.h */,
+				25EC89041D77227F008F6392 /* WKCardsPictureView.m */,
+				25EC89061D7722A4008F6392 /* WKCardsPictureView.xib */,
+				25EC890E1D7738A9008F6392 /* WKProgressView.h */,
+				25EC890F1D7738A9008F6392 /* WKProgressView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -449,7 +470,7 @@
 		254918241D6F701600601E06 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				254918301D6F701600601E06 /* Assets.xcassets */,
+				25EC890C1D7723E1008F6392 /* Images.xcassets */,
 				254918321D6F701600601E06 /* LaunchScreen.storyboard */,
 				254918351D6F701600601E06 /* Info.plist */,
 			);
@@ -562,6 +583,7 @@
 				TargetAttributes = {
 					254918201D6F701600601E06 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 8Y2G5F25VK;
 					};
 					254918391D6F701600601E06 = {
 						CreatedOnToolsVersion = 7.3;
@@ -600,13 +622,15 @@
 			files = (
 				258537EA1D71A95F006AD5FE /* WKFriendCategoryCell.xib in Resources */,
 				25BF21F31D70BBE9003271C0 /* WKFriendViewController.xib in Resources */,
+				25EC89071D7722A4008F6392 /* WKCardsPictureView.xib in Resources */,
 				258537FD1D720589006AD5FE /* WKEssenceTageCell.xib in Resources */,
+				25EC890D1D7723E1008F6392 /* Images.xcassets in Resources */,
 				25F04BD01D72ED1F0006D241 /* WKguideView.xib in Resources */,
+				25EC89151D774786008F6392 /* WKShowPictureViewController.xib in Resources */,
 				258537F21D71BE22006AD5FE /* WKFriendUserCell.xib in Resources */,
 				25F04BC51D727DBC0006D241 /* WKloginReguistViewController.xib in Resources */,
 				254918341D6F701600601E06 /* LaunchScreen.storyboard in Resources */,
 				25DF18841D74A31D003EF3CC /* WKCardsCell.xib in Resources */,
-				254918311D6F701600601E06 /* Assets.xcassets in Resources */,
 				251012EF1D70A0B500BBBEB5 /* WKFriendTrendsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -682,9 +706,11 @@
 			files = (
 				251012DA1D709E3000BBBEB5 /* main.m in Sources */,
 				251012EA1D70A09F00BBBEB5 /* WKNewViewController.m in Sources */,
+				25EC89101D7738A9008F6392 /* WKProgressView.m in Sources */,
 				258537ED1D71BDAE006AD5FE /* WKFriendUser.m in Sources */,
 				25F04BCE1D72ED0E0006D241 /* WKguideView.m in Sources */,
 				25BF21EE1D70B2D7003271C0 /* WKBarButtonItem.m in Sources */,
+				25EC89051D77227F008F6392 /* WKCardsPictureView.m in Sources */,
 				25F04BCB1D7292BF0006D241 /* WKTextField.m in Sources */,
 				258537F51D7202EE006AD5FE /* WKEssenceTagViewController.m in Sources */,
 				251012EE1D70A0B500BBBEB5 /* WKFriendTrendsViewController.m in Sources */,
@@ -700,6 +726,7 @@
 				251012D91D709E3000BBBEB5 /* AppDelegate.m in Sources */,
 				251012F81D70A97500BBBEB5 /* WKTabBar.m in Sources */,
 				258537E51D71A86F006AD5FE /* WKFriendCategory.m in Sources */,
+				25EC89141D774786008F6392 /* WKShowPictureViewController.m in Sources */,
 				251012DD1D709EC100BBBEB5 /* WKTabBarController.m in Sources */,
 				251012E41D709FD000BBBEB5 /* UIView+Frame.m in Sources */,
 				251012E11D709FBB00BBBEB5 /* Foundation+Log.m in Sources */,
@@ -845,12 +872,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "暴走漫画/Classes/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = "暴走漫画/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.alasijiadegou.----";
+				PRODUCT_BUNDLE_IDENTIFIER = .com.alasijiadegou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -860,12 +891,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "暴走漫画/Classes/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = "暴走漫画/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.alasijiadegou.----";
+				PRODUCT_BUNDLE_IDENTIFIER = .com.alasijiadegou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

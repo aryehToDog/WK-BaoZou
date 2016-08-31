@@ -8,15 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef enum{
-    
-    WKCardsTypeAllVc = 1,
-    WKCardsTypeVideo = 41,
-    WKCardsTypeVoice = 31,
-    WKCardsTypePicture = 10,
-    WKCardsTypeText = 29
-    
-}WKCardsType;
+
 
 @interface WKCardsViewController : UITableViewController
 

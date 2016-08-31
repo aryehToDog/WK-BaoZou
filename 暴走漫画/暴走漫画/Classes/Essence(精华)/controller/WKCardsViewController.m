@@ -199,7 +199,11 @@ static NSString * const ID = @"cards";
 //设置行高
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return 200;
+    WKCards *cards = self.cards[indexPath.row];
+    
+    //返回对应的行高
+    return cards.cellHeight;
+    
 }
 
 @end

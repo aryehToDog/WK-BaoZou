@@ -7,7 +7,23 @@
 //
 
 #import "WKCards.h"
+#import <MJExtension.h>
 @implementation WKCards
+{
+    CGFloat _cellHeight;
+    CGRect _pictureF;
+    
+}
+
++ (NSDictionary *)mj_replacedKeyFromPropertyName {
+
+    return @{
+             @"small_image": @"image0",
+             @"middle_image": @"image1",
+             @"large_image": @"image2"
+             };
+
+}
 
 - (NSString *)create_time {
 
@@ -44,5 +60,52 @@
 
 }
 
+//返回的行高
+- (CGFloat)cellHeight {
+
+    if (!_cellHeight) {
+        //计算文字的高度
+        CGSize textSize = CGSizeMake(WKScreenW - 4 * WKCardPictureMaragin, CGFLOAT_MAX);
+        
+        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+        dict[NSFontAttributeName] = [UIFont systemFontOfSize:14];
+        
+        //获取文字的高度
+        CGFloat textH = [self.text boundingRectWithSize:textSize options:NSStringDrawingUsesLineFragmentOrigin attributes:dict context:nil].size.height;
+        
+        _cellHeight = WKCardPictureY + textH + WKCardPictureMaragin;
+        
+        //当是在图片模块
+        if (self.type == WKCardsTypePicture) {
+            
+            //计算图片的frame
+            CGFloat pictureW = textSize.width;
+            //  pictureW   self.width
+            //  pictureH   self.height
+            CGFloat pictureH = pictureW * self.height / self.width;
+            
+            if (pictureH >= WKCardPictureMaxH) {     //为大图
+                
+                self.bigPicture = YES;
+                pictureH = WKCardPictureClicpH;
+                
+            }
+            CGFloat  pictureX = WKCardPictureMaragin;
+            CGFloat  pictureY = WKCardPictureY + textH + WKCardPictureMaragin ;
+            
+            _pictureF = CGRectMake(pictureX, pictureY, pictureW, pictureH);
+         
+            
+            _cellHeight += pictureH + WKCardPictureMaragin;
+        }
+        
+        _cellHeight += WKCardPictureMaragin + WKCardBottonH;
+    }
+    
+
+    
+    return _cellHeight;
+
+}
 
 @end
