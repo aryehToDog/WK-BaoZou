@@ -3,6 +3,7 @@
     {
       "idiom" : "iphone",
       "size" : "29x29",
+     "filename" : "AppIcon60x60@2x.png",
       "scale" : "2x"
     },
     {
@@ -11,8 +12,9 @@
       "scale" : "3x"
     },
     {
-      "idiom" : "iphone",
       "size" : "40x40",
+      "idiom" : "iphone",
+      "filename" : "AppIcon76x76@2x~ipad.png",
       "scale" : "2x"
     },
     {
@@ -24,12 +26,29 @@
     {
       "idiom" : "iphone",
       "size" : "60x60",
+     "filename" : "AppIcon60x60@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "iphone",
       "size" : "60x60",
       "scale" : "3x"
+    },
+    {
+      "idiom" : "ipad",
+      "size" : "29x29",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "ipad",
+      "size" : "29x29",
+     "filename" : "AppIcon60x60@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "ipad",
+      "size" : "40x40",
+      "scale" : "1x"
     },
     {
       "size" : "40x40",
@@ -44,9 +63,9 @@
       "scale" : "1x"
     },
     {
-      "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "AppIcon76x76@2x~ipad.png",
+      "size" : "76x76",
+     "filename" : "AppIcon60x60@2x.png",
       "scale" : "2x"
     },
     {
@@ -68,11 +87,53 @@
       "scale" : "3x"
     },
     {
+      "size" : "24x24",
+      "idiom" : "watch",
+      "scale" : "2x",
+      "role" : "notificationCenter",
+      "subtype" : "38mm"
+    },
+    {
+      "size" : "27.5x27.5",
+      "idiom" : "watch",
+      "scale" : "2x",
+      "role" : "notificationCenter",
+      "subtype" : "42mm"
+    },
+    {
+      "size" : "29x29",
+      "idiom" : "watch",
+      "role" : "companionSettings",
+     "filename" : "AppIcon60x60@2x.png",
+      "scale" : "2x"
+    },
+    {
       "size" : "29x29",
       "idiom" : "watch",
       "filename" : "AppIcon29x29@3x.png",
       "role" : "companionSettings",
       "scale" : "3x"
+    },
+    {
+      "size" : "40x40",
+      "idiom" : "watch",
+      "scale" : "2x",
+      "role" : "appLauncher",
+      "subtype" : "38mm"
+    },
+    {
+      "size" : "86x86",
+      "idiom" : "watch",
+      "scale" : "2x",
+      "role" : "quickLook",
+      "subtype" : "38mm"
+    },
+    {
+      "size" : "98x98",
+      "idiom" : "watch",
+      "scale" : "2x",
+      "role" : "quickLook",
+      "subtype" : "42mm"
     },
     {
       "size" : "40x40",
