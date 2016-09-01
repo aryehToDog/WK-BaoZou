@@ -112,6 +112,8 @@
     
     WKShowPictureViewController *showVc = [[WKShowPictureViewController alloc]init];
     
+    showVc.cards = self.cards;
+    
     [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:showVc animated:YES completion:nil];
     
 }

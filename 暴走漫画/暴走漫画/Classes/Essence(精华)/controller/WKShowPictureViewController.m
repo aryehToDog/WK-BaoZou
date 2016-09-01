@@ -31,9 +31,17 @@
     
     [pictureImageView addGestureRecognizer:tap];
     
+    [self.scorllView addSubview:pictureImageView];
+  
+    self.pictureImageView = pictureImageView;
+
     //设置图片尺寸
     CGFloat imageW = WKScreenW;
-    CGFloat imageH = imageW * self.cards.height / self.cards.width;
+    
+    CGFloat scale = self.cards.width ? self.cards.height / self.cards.width : 1.0f;
+    
+    CGFloat imageH = imageW * scale;
+    
     if (imageH > WKScreenH) {
         
         pictureImageView.frame = CGRectMake(0, 0, imageW, imageH);
@@ -44,17 +52,15 @@
         pictureImageView.centerY = WKScreenH * 0.5;
     }
     
-    [self.scorllView addSubview:pictureImageView];
-  
-    self.pictureImageView = pictureImageView;
-
-    
-    
     
     //刷新纪录上一次保存的进度
     [self.progressView setProgress:self.cards.progress animated:YES];
     
-    [pictureImageView sd_setImageWithURL:[NSURL URLWithString:self.cards.large_image] placeholderImage:nil options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+//    if (self.cards.large_image == nil) {
+//        return;
+//    }
+    
+    [self.pictureImageView sd_setImageWithURL:[NSURL URLWithString:self.cards.middle_image] placeholderImage:nil options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
         
         self.cards.progress = 1.0 * receivedSize / expectedSize;
         //显示进度
@@ -66,6 +72,7 @@
         
         
     }];
+    
 
 }
 
