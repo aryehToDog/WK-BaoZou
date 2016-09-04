@@ -67,7 +67,7 @@
     [self addChildViewController:videoVc];
     
     WKCardsViewController *voiceVc = [[WKCardsViewController alloc]init];
-    allVc.type = WKCardsTypeVoice;
+    voiceVc.type = WKCardsTypeVoice;
     voiceVc.title = @"声音";
     [self addChildViewController:voiceVc];
     
