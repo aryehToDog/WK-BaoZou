@@ -10,6 +10,8 @@
 #import <UIImageView+WebCache.h>
 #import "WKCards.h"
 #import "WKCardsPictureView.h"
+#import "WKCardsVoiceView.h"
+#import "WKCardsVideoView.h"
 @interface WKCardsCell ()
 /** 图像 */
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
@@ -31,6 +33,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *cardsLabel;
 /** 图片模块的View */
 @property (nonatomic,strong)WKCardsPictureView *cardsPictureView;
+/** 音频模块的View */
+@property (nonatomic,strong)WKCardsVoiceView *cardsVoiceView;
+/** 视频模块的View */
+@property (nonatomic,strong)WKCardsVideoView *cardsVideoView;
 
 @end
 
@@ -48,6 +54,32 @@
     }
 
     return _cardsPictureView;
+}
+- (WKCardsVoiceView *)cardsVoiceView {
+    
+    if (!_cardsVoiceView) {
+        
+        //将cardsPictureView 添加到cell中
+        WKCardsVoiceView *cardsVoiceView = [WKCardsVoiceView voiceView];
+        [self.contentView addSubview:cardsVoiceView];
+        
+        _cardsVoiceView = cardsVoiceView;
+    }
+    
+    return _cardsVoiceView;
+}
+- (WKCardsVideoView *)cardsVideoView {
+    
+    if (!_cardsVideoView) {
+        
+        //将cardsPictureView 添加到cell中
+        WKCardsVideoView *cardsVideoView = [WKCardsVideoView videoView];
+        [self.contentView addSubview:cardsVideoView];
+        
+        _cardsVideoView = cardsVideoView;
+    }
+    
+    return _cardsVideoView;
 }
 
 - (void)awakeFromNib {
@@ -92,11 +124,34 @@
     
     //判断当前选择模块所要显示的内容
     if (cards.type == WKCardsTypePicture) {   //假如当前模块为图片模块
-        
+        self.cardsPictureView.hidden = NO;
         self.cardsPictureView.cards = cards;
         //frame模型进行赋值
         self.cardsPictureView.frame = cards.pictureF;
+        self.cardsVoiceView.hidden = YES;
+        self.cardsVideoView.hidden = YES;
         
+    } else if (cards.type == WKCardsTypeVoice) {  //假如当前模块为声音模块
+        self.cardsVoiceView.hidden = NO;
+        self.cardsVoiceView.cards = cards;
+        //frame模型进行赋值
+        self.cardsVoiceView.frame = cards.VoiceF;
+        self.cardsPictureView.hidden = YES;
+        self.cardsVideoView.hidden = YES;
+    
+    }else if (cards.type == WKCardsTypeVideo) {  //假如当前模块为视频模块
+        self.cardsVideoView.hidden = NO;
+        self.cardsVideoView.cards = cards;
+        //frame模型进行赋值
+        self.cardsVideoView.frame = cards.VideoF;
+        self.cardsPictureView.hidden = YES;
+        self.cardsVoiceView.hidden = YES;
+    
+    }else {                                     //全部模块
+    
+        self.cardsPictureView.hidden = YES;
+        self.cardsVoiceView.hidden = YES;
+        self.cardsVideoView.hidden = YES;
     }
     
 }

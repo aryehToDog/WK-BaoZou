@@ -97,6 +97,25 @@
          
             
             _cellHeight += pictureH + WKCardPictureMaragin;
+        }else if (self.type == WKCardsTypeVoice) {    //音频模块
+        
+            CGFloat voiceW = textSize.width;
+            CGFloat voiceH = voiceW * self.height / self.width;
+            CGFloat  voiceX = WKCardPictureMaragin;
+            CGFloat  voiceY = WKCardPictureY + textH + WKCardPictureMaragin ;
+        
+            _VoiceF = CGRectMake(voiceX, voiceY, voiceW, voiceH);
+            _cellHeight += voiceH + WKCardPictureMaragin;
+        }else if (self.type == WKCardsTypeVideo) {    //视频模块
+            
+            CGFloat videoW = textSize.width;
+            CGFloat videoH = videoW * self.height / self.width;
+            CGFloat  videoX = WKCardPictureMaragin;
+            CGFloat  videoY = WKCardPictureY + textH + WKCardPictureMaragin ;
+            
+            _VideoF = CGRectMake(videoX, videoY, videoW, videoH);
+            _cellHeight += videoH + WKCardPictureMaragin;
+        
         }
         
         _cellHeight += WKCardPictureMaragin + WKCardBottonH;

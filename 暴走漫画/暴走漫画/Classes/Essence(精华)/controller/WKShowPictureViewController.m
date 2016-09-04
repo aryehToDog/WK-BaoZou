@@ -56,10 +56,6 @@
     //刷新纪录上一次保存的进度
     [self.progressView setProgress:self.cards.progress animated:YES];
     
-//    if (self.cards.large_image == nil) {
-//        return;
-//    }
-    
     [self.pictureImageView sd_setImageWithURL:[NSURL URLWithString:self.cards.middle_image] placeholderImage:nil options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
         
         self.cards.progress = 1.0 * receivedSize / expectedSize;

@@ -137,8 +137,6 @@
     redView.y = titleView.height - redView.height;
     self.redView = redView;
     
-//    NSArray *titles = @[@"全部",@"视频",@"声音",@"图片",@"段子"];
-    
     NSInteger count = self.childViewControllers.count;
     CGFloat buttonH = titleView.height;
     CGFloat buttonW = titleView.width / count;

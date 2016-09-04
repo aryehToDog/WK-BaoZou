@@ -26,6 +26,10 @@
 		2577E3671D75289800D843F9 /* WKConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 2577E3661D75289800D843F9 /* WKConst.m */; };
 		257DA7581D7AA40D009CC0AA /* WKPublishView.m in Sources */ = {isa = PBXBuildFile; fileRef = 257DA7571D7AA40D009CC0AA /* WKPublishView.m */; };
 		257DA75A1D7AA41F009CC0AA /* WKPublishView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 257DA7591D7AA41F009CC0AA /* WKPublishView.xib */; };
+		257DA75D1D7BC5F8009CC0AA /* WKCardsVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 257DA75C1D7BC5F8009CC0AA /* WKCardsVoiceView.m */; };
+		257DA75F1D7BC60B009CC0AA /* WKCardsVoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 257DA75E1D7BC60B009CC0AA /* WKCardsVoiceView.xib */; };
+		257DA7621D7BE114009CC0AA /* WKCardsVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 257DA7611D7BE114009CC0AA /* WKCardsVideoView.m */; };
+		257DA7641D7BE125009CC0AA /* WKCardsVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 257DA7631D7BE125009CC0AA /* WKCardsVideoView.xib */; };
 		258537E51D71A86F006AD5FE /* WKFriendCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 258537E41D71A86F006AD5FE /* WKFriendCategory.m */; };
 		258537E91D71A95F006AD5FE /* WKFriendCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 258537E71D71A95F006AD5FE /* WKFriendCategoryCell.m */; };
 		258537EA1D71A95F006AD5FE /* WKFriendCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 258537E81D71A95F006AD5FE /* WKFriendCategoryCell.xib */; };
@@ -114,6 +118,12 @@
 		257DA7561D7AA40D009CC0AA /* WKPublishView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKPublishView.h; sourceTree = "<group>"; };
 		257DA7571D7AA40D009CC0AA /* WKPublishView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKPublishView.m; sourceTree = "<group>"; };
 		257DA7591D7AA41F009CC0AA /* WKPublishView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WKPublishView.xib; sourceTree = "<group>"; };
+		257DA75B1D7BC5F8009CC0AA /* WKCardsVoiceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKCardsVoiceView.h; sourceTree = "<group>"; };
+		257DA75C1D7BC5F8009CC0AA /* WKCardsVoiceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKCardsVoiceView.m; sourceTree = "<group>"; };
+		257DA75E1D7BC60B009CC0AA /* WKCardsVoiceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WKCardsVoiceView.xib; sourceTree = "<group>"; };
+		257DA7601D7BE114009CC0AA /* WKCardsVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKCardsVideoView.h; sourceTree = "<group>"; };
+		257DA7611D7BE114009CC0AA /* WKCardsVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKCardsVideoView.m; sourceTree = "<group>"; };
+		257DA7631D7BE125009CC0AA /* WKCardsVideoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WKCardsVideoView.xib; sourceTree = "<group>"; };
 		258537E31D71A86F006AD5FE /* WKFriendCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKFriendCategory.h; sourceTree = "<group>"; };
 		258537E41D71A86F006AD5FE /* WKFriendCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKFriendCategory.m; sourceTree = "<group>"; };
 		258537E61D71A95F006AD5FE /* WKFriendCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKFriendCategoryCell.h; sourceTree = "<group>"; };
@@ -254,6 +264,12 @@
 				25EC89031D77227F008F6392 /* WKCardsPictureView.h */,
 				25EC89041D77227F008F6392 /* WKCardsPictureView.m */,
 				25EC89061D7722A4008F6392 /* WKCardsPictureView.xib */,
+				257DA75B1D7BC5F8009CC0AA /* WKCardsVoiceView.h */,
+				257DA75C1D7BC5F8009CC0AA /* WKCardsVoiceView.m */,
+				257DA75E1D7BC60B009CC0AA /* WKCardsVoiceView.xib */,
+				257DA7601D7BE114009CC0AA /* WKCardsVideoView.h */,
+				257DA7611D7BE114009CC0AA /* WKCardsVideoView.m */,
+				257DA7631D7BE125009CC0AA /* WKCardsVideoView.xib */,
 				25EC890E1D7738A9008F6392 /* WKProgressView.h */,
 				25EC890F1D7738A9008F6392 /* WKProgressView.m */,
 			);
@@ -627,7 +643,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				257DA7641D7BE125009CC0AA /* WKCardsVideoView.xib in Resources */,
 				258537EA1D71A95F006AD5FE /* WKFriendCategoryCell.xib in Resources */,
+				257DA75F1D7BC60B009CC0AA /* WKCardsVoiceView.xib in Resources */,
 				25BF21F31D70BBE9003271C0 /* WKFriendViewController.xib in Resources */,
 				25EC89071D7722A4008F6392 /* WKCardsPictureView.xib in Resources */,
 				258537FD1D720589006AD5FE /* WKEssenceTageCell.xib in Resources */,
@@ -725,6 +743,7 @@
 				251012F21D70A0CD00BBBEB5 /* WKMeViewController.m in Sources */,
 				258537FC1D720589006AD5FE /* WKEssenceTageCell.m in Sources */,
 				257DA7581D7AA40D009CC0AA /* WKPublishView.m in Sources */,
+				257DA75D1D7BC5F8009CC0AA /* WKCardsVoiceView.m in Sources */,
 				25F04BC81D7285650006D241 /* WKloginReguistBtn.m in Sources */,
 				25DF187F1D749FC9003EF3CC /* WKCards.m in Sources */,
 				251012F51D70A87800BBBEB5 /* WKNavViewController.m in Sources */,
@@ -738,6 +757,7 @@
 				25EC89141D774786008F6392 /* WKShowPictureViewController.m in Sources */,
 				251012DD1D709EC100BBBEB5 /* WKTabBarController.m in Sources */,
 				251012E41D709FD000BBBEB5 /* UIView+Frame.m in Sources */,
+				257DA7621D7BE114009CC0AA /* WKCardsVideoView.m in Sources */,
 				251012E11D709FBB00BBBEB5 /* Foundation+Log.m in Sources */,
 				25DF188A1D74B8E8003EF3CC /* NSDate+WKExtension.m in Sources */,
 				2577E3671D75289800D843F9 /* WKConst.m in Sources */,

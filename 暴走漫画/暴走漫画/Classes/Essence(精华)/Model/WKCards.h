@@ -40,6 +40,12 @@
 @property (nonatomic, copy) NSString *middle_image;
 /** 大图片的URL */
 @property (nonatomic, copy) NSString *large_image;
+/** 音频时间 */
+@property (nonatomic, assign) NSInteger voicetime;
+/** 视频时间 */
+@property (nonatomic, assign) NSInteger videotime;
+/** 播放次数 */
+@property (nonatomic, assign) NSInteger playcount;
 
 
 
@@ -47,6 +53,10 @@
 @property (nonatomic,assign,readonly)CGFloat cellHeight;
 /** 返回图片frame */
 @property (nonatomic,assign,readonly)CGRect pictureF;
+/** 返回音频frame */
+@property (nonatomic,assign,readonly)CGRect VoiceF;
+/** 返回视频frame */
+@property (nonatomic,assign,readonly)CGRect VideoF;
 /** 判断是否为大图 */
 @property (nonatomic,assign,getter=isBigPicture)BOOL bigPicture;
 /** 显示的进度 */

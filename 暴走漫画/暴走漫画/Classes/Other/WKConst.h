@@ -7,6 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+
+typedef enum{
+    
+    WKCardsTypeAllVc = 1,
+    WKCardsTypeVideo = 41,
+    WKCardsTypeVoice = 31,
+    WKCardsTypePicture = 10,
+    WKCardsTypeText = 29
+    
+}WKCardsType;
+
 /** 精华顶部View的H */
 UIKIT_EXTERN CGFloat const WKTitilesViewH;
 /** 精华顶部View的Y */
