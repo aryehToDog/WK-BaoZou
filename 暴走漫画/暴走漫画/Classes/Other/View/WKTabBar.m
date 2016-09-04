@@ -7,7 +7,7 @@
 //
 
 #import "WKTabBar.h"
-
+#import "WKPublishView.h"
 @interface WKTabBar ()
 
 @property (nonatomic,weak)UIButton *redBtn;
@@ -25,6 +25,8 @@
         [redBtn setImage:[UIImage imageNamed:@"tabBar_publish_icon"] forState:UIControlStateNormal];
         [redBtn setImage:[UIImage imageNamed:@"tabBar_publish_click_icon"] forState:UIControlStateSelected];
         
+        [redBtn addTarget:self action:@selector(clickRedBtn) forControlEvents:UIControlEventTouchUpInside];
+        
         [self addSubview:redBtn];
         self.redBtn = redBtn;
         
@@ -35,6 +37,17 @@
     return self;
 }
 
+/*
+ *clickRedBtn
+ */
+
+- (void)clickRedBtn {
+
+    //显示发布页面
+    [WKPublishView show];
+
+
+}
 
 - (void)layoutSubviews {
 

@@ -24,6 +24,8 @@
 		2549184A1D6F701600601E06 /* ____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 254918491D6F701600601E06 /* ____UITests.m */; };
 		2577E3641D7525E200D843F9 /* WKCardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2577E3631D7525E200D843F9 /* WKCardsViewController.m */; };
 		2577E3671D75289800D843F9 /* WKConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 2577E3661D75289800D843F9 /* WKConst.m */; };
+		257DA7581D7AA40D009CC0AA /* WKPublishView.m in Sources */ = {isa = PBXBuildFile; fileRef = 257DA7571D7AA40D009CC0AA /* WKPublishView.m */; };
+		257DA75A1D7AA41F009CC0AA /* WKPublishView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 257DA7591D7AA41F009CC0AA /* WKPublishView.xib */; };
 		258537E51D71A86F006AD5FE /* WKFriendCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 258537E41D71A86F006AD5FE /* WKFriendCategory.m */; };
 		258537E91D71A95F006AD5FE /* WKFriendCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 258537E71D71A95F006AD5FE /* WKFriendCategoryCell.m */; };
 		258537EA1D71A95F006AD5FE /* WKFriendCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 258537E81D71A95F006AD5FE /* WKFriendCategoryCell.xib */; };
@@ -109,6 +111,9 @@
 		2577E3631D7525E200D843F9 /* WKCardsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKCardsViewController.m; sourceTree = "<group>"; };
 		2577E3651D75289800D843F9 /* WKConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKConst.h; sourceTree = "<group>"; };
 		2577E3661D75289800D843F9 /* WKConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKConst.m; sourceTree = "<group>"; };
+		257DA7561D7AA40D009CC0AA /* WKPublishView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKPublishView.h; sourceTree = "<group>"; };
+		257DA7571D7AA40D009CC0AA /* WKPublishView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKPublishView.m; sourceTree = "<group>"; };
+		257DA7591D7AA41F009CC0AA /* WKPublishView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WKPublishView.xib; sourceTree = "<group>"; };
 		258537E31D71A86F006AD5FE /* WKFriendCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKFriendCategory.h; sourceTree = "<group>"; };
 		258537E41D71A86F006AD5FE /* WKFriendCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKFriendCategory.m; sourceTree = "<group>"; };
 		258537E61D71A95F006AD5FE /* WKFriendCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKFriendCategoryCell.h; sourceTree = "<group>"; };
@@ -432,6 +437,9 @@
 				25F04BCC1D72ED0E0006D241 /* WKguideView.h */,
 				25F04BCD1D72ED0E0006D241 /* WKguideView.m */,
 				25F04BCF1D72ED1F0006D241 /* WKguideView.xib */,
+				257DA7561D7AA40D009CC0AA /* WKPublishView.h */,
+				257DA7571D7AA40D009CC0AA /* WKPublishView.m */,
+				257DA7591D7AA41F009CC0AA /* WKPublishView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -628,6 +636,7 @@
 				25EC89151D774786008F6392 /* WKShowPictureViewController.xib in Resources */,
 				258537F21D71BE22006AD5FE /* WKFriendUserCell.xib in Resources */,
 				25F04BC51D727DBC0006D241 /* WKloginReguistViewController.xib in Resources */,
+				257DA75A1D7AA41F009CC0AA /* WKPublishView.xib in Resources */,
 				254918341D6F701600601E06 /* LaunchScreen.storyboard in Resources */,
 				25DF18841D74A31D003EF3CC /* WKCardsCell.xib in Resources */,
 				251012EF1D70A0B500BBBEB5 /* WKFriendTrendsViewController.xib in Resources */,
@@ -715,6 +724,7 @@
 				251012EE1D70A0B500BBBEB5 /* WKFriendTrendsViewController.m in Sources */,
 				251012F21D70A0CD00BBBEB5 /* WKMeViewController.m in Sources */,
 				258537FC1D720589006AD5FE /* WKEssenceTageCell.m in Sources */,
+				257DA7581D7AA40D009CC0AA /* WKPublishView.m in Sources */,
 				25F04BC81D7285650006D241 /* WKloginReguistBtn.m in Sources */,
 				25DF187F1D749FC9003EF3CC /* WKCards.m in Sources */,
 				251012F51D70A87800BBBEB5 /* WKNavViewController.m in Sources */,
